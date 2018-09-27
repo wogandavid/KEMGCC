@@ -34,7 +34,7 @@ ELbld.fx('Nuclear',v,trun,r,c)=0;
 
 *TRnodaltrans.up(ELl,ELs,ELday,t,r,c,rr,cc)$(not sameas(c,cc))=0;
 
-execute_loadpoint "DO.gdx";
+*execute_loadpoint "DO.gdx";
 
 *OTHERfconsump('methane','t1','east','ksa')=OTHERfconsump('methane','t1','east','ksa')*0.96;
 

@@ -11,7 +11,7 @@ Included sectors:
  It is a forked model from the KAPSARC Energy Model available at:
 
  https://www.kapsarc.org/openkapsarc/the-kapsarc-energy-model-for-saudi-arabia/
- 
+
 This model was used to generate results for "The costs and gains of
 policy options for coordinating electricity production
 in the Gulf Cooperation Council" in Energy Policy.
@@ -117,18 +117,6 @@ parameter methane_add(time);
 * to run multi-period include these two:
 *$INCLUDE projections.gms
 *$INCLUDE solve_multi.gms
-
-* == climate policies
-*$INCLUDE solve_climate_reference.gms
-*$INCLUDE solve_climate_deregulation.gms
-*$INCLUDE solve_climate_gradual_half.gms
-*$INCLUDE solve_climate_RPS.gms
-*$INCLUDE solve_climate_CIS.gms
-
-
-*$INCLUDE solve_climate_gradual.gms
-
-*$INCLUDE solve_climate_capsub.gms
 
 $INCLUDE report_excel.gms
 
