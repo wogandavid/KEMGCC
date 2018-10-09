@@ -59,6 +59,8 @@ ELWAfortrade(trun,c,ELl)
 
 RWDELsup(trun,ELl,ELs,ELday,r,c)
 
+RWcapfac(trun,ELpsw,v,r,c)
+
 * cost calculations
 
 RWcapex(trun,c)

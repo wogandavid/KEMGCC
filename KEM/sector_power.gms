@@ -762,7 +762,7 @@ ELsolcurve(ELl,ELs,'omnr','omn') = ELlsolcurve_qat(ELl,ELs,'qatr','qat') ;
 *normalized by the maximum irradiance value throughout the year.
 
 Parameter ELsolcurvenorm(ELl,ELs,r,c) normalized DNI profiles from ELsolcurve;
-Elsolcurvenorm(ELl,ELs,r,c)$rc(r,c)=ELsolcurve(ELl,ELs,r,c)/smax((ELll,ELss),ELsolcurve(ELll,ELss,r,c));
+Elsolcurvenorm(ELl,ELs,r,c)$rc(r,c)=0.85*ELsolcurve(ELl,ELs,r,c)/smax((ELll,ELss),ELsolcurve(ELll,ELss,r,c));
 
 *The following table considers the impact of incrementally adding solar capacity
 *in each region. These capacities are defined as the nominal peak output

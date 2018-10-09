@@ -61,6 +61,7 @@ ELtrademax.l
 *RWfexportrev
 *RWnetex
 RWcostcalcs
+RWcapfac
 *RWmargencost
 ;
 

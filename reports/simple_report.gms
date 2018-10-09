@@ -252,3 +252,10 @@ RWELtrade_ELl(trun,ELl,ELs,c,cc)$(not sameas(c,cc))=sum((r,rr,ELday)$(rc(r,c) an
 
 RWDELsup(trun,ELl,ELs,ELday,r,c)= DELsup.l(ELl,ELs,ELday,trun,r,c);
 
+* capacity factor
+
+RWcapfac(trun,ELpsw,v,r,c)$rc(r,c)=
+ sum((ELl,ELs,ELday),ELsolop.l(ELpsw,v,ELl,ELs,ELday,trun,r,c))/
+  (8.76*(ELrenexistcp.l(ELpsw,v,trun,r,c)
+  +ELrenbld.l(ELpsw,v,trun,r,c)
+  ));
