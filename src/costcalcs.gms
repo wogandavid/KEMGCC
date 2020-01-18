@@ -124,6 +124,6 @@ RWcostcalcs(trun,'ELexportrev',c)=RWELexportrev(trun,c)/1e3;
 RWcostcalcs(trun,'fExportrev',c)=RWfexportrev(trun,c)/1e3;
 RWcostcalcs(trun,'Total System',c)=RWnetex(trun,c)/1e3;
 
-execute_unload 'results/%scenario%/results_cost_calcs_%scenario%.gdx'
+execute_unload 'results/for-post/results_cost_calcs_%scenario%.gdx'
 RWcostcalcs
 ;

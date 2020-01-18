@@ -66,7 +66,7 @@ ELtrademax.l
 ;
 
 * write to excel
-execute_unload 'results/%scenario%/results_%scenario%.gdx'
+execute_unload 'results/for-post/results_%scenario%.gdx'
 ELWAbld_xls
 ELWAsupELp
 ELWAsupWAp

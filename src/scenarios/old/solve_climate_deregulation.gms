@@ -5,8 +5,8 @@
 
 * multi-period
 
-option limcol=100;
-option limrow=100;
+option limcol=0;
+option limrow=0;
 option savepoint=2;
 
 capsub(ELp,trun)=0;
@@ -25,65 +25,65 @@ ELfAP(ELf,c)=yes;
 WAfAP(WAf,c)=yes;
 
 * set administered prices - Bahrain
-fAP('methane','t1','bah')=2.75;
-fAP('arablight','t1','bah')=fintlprice('arablight','t1');
-fAP('u-235','t1','bah')=fintlprice('u-235','t1');
-fAP('ethane','t1','bah')=2.00;
-fAP('arabheavy','t1','bah')=fintlprice('arablight','t1');
-fAP('diesel','t1','bah')=268.48;
-fAP('HFO','t1','bah')= 1e2;
-fAP('Coal','t1','bah')=fintlprice('coal','t1');
+fAP('methane','t01','bah')=2.75;
+fAP('arablight','t01','bah')=fintlprice('arablight','t01');
+fAP('u-235','t01','bah')=fintlprice('u-235','t01');
+fAP('ethane','t01','bah')=2.00;
+fAP('arabheavy','t01','bah')=fintlprice('arablight','t01');
+fAP('diesel','t01','bah')=268.48;
+fAP('HFO','t01','bah')= 1e2;
+fAP('Coal','t01','bah')=fintlprice('coal','t01');
 
 * Kuwait
-*fAP('methane','t1','kuw')=fintlprice('methane','t1');
-fAP('methane','t1','kuw')=3.53;
-fAP('arablight','t1','kuw')=42.10;
-fAP('u-235','t1','kuw')=fintlprice('u-235','t1');
-fAP('ethane','t1','kuw')=2.00;
-fAP('arabheavy','t1','kuw')=fintlprice('arabheavy','t1');
-fAP('diesel','t1','kuw')=470.46;
-fAP('HFO','t1','kuw')= 297.91;
-fAP('Coal','t1','kuw')=fintlprice('coal','t1');
+*fAP('methane','t01','kuw')=fintlprice('methane','t01');
+fAP('methane','t01','kuw')=3.53;
+fAP('arablight','t01','kuw')=42.10;
+fAP('u-235','t01','kuw')=fintlprice('u-235','t01');
+fAP('ethane','t01','kuw')=2.00;
+fAP('arabheavy','t01','kuw')=fintlprice('arabheavy','t01');
+fAP('diesel','t01','kuw')=470.46;
+fAP('HFO','t01','kuw')= 297.91;
+fAP('Coal','t01','kuw')=fintlprice('coal','t01');
 
 * set administered prices - Oman
-fAP('methane','t1','omn')=2.00;
-fAP('arablight','t1','omn')=fintlprice('arablight','t1');
-fAP('u-235','t1','omn')=fintlprice('u-235','t1');
-fAP('ethane','t1','omn')=2.00;
-fAP('arabheavy','t1','omn')=fintlprice('arablight','t1');
-fAP('diesel','t1','omn')=1e2;
-fAP('HFO','t1','omn')= 1e2;
-fAP('Coal','t1','omn')=fintlprice('coal','t1');
+fAP('methane','t01','omn')=2.00;
+fAP('arablight','t01','omn')=fintlprice('arablight','t01');
+fAP('u-235','t01','omn')=fintlprice('u-235','t01');
+fAP('ethane','t01','omn')=2.00;
+fAP('arabheavy','t01','omn')=fintlprice('arablight','t01');
+fAP('diesel','t01','omn')=1e2;
+fAP('HFO','t01','omn')= 1e2;
+fAP('Coal','t01','omn')=fintlprice('coal','t01');
 
 * set administered prices - Qatar
-fAP('methane','t1','qat')=1.50;
-fAP('arablight','t1','qat')=fintlprice('arablight','t1');
-fAP('u-235','t1','qat')=fintlprice('u-235','t1');
-fAP('ethane','t1','qat')=2.00;
-fAP('arabheavy','t1','qat')=fintlprice('arablight','t1');
-fAP('diesel','t1','qat')=1e2;
-fAP('HFO','t1','qat')= 1e2;
-fAP('Coal','t1','qat')=fintlprice('coal','t1');
+fAP('methane','t01','qat')=1.50;
+fAP('arablight','t01','qat')=fintlprice('arablight','t01');
+fAP('u-235','t01','qat')=fintlprice('u-235','t01');
+fAP('ethane','t01','qat')=2.00;
+fAP('arabheavy','t01','qat')=fintlprice('arablight','t01');
+fAP('diesel','t01','qat')=1e2;
+fAP('HFO','t01','qat')= 1e2;
+fAP('Coal','t01','qat')=fintlprice('coal','t01');
 
 * set administered prices - KSA
-fAP('methane','t1','ksa')=0.75;
-fAP('arablight','t1','ksa')=4.24;
-fAP('u-235','t1','ksa')=101.5;
-fAP('ethane','t1','ksa')=0.75;
-fAP('arabheavy','t1','ksa')=6;
-fAP('diesel','t1','ksa')=27;
-fAP('HFO','t1','ksa')= 14;
-fAP('Coal','t1','ksa')=fintlprice('coal','t1');
+fAP('methane','t01','ksa')=0.75;
+fAP('arablight','t01','ksa')=4.24;
+fAP('u-235','t01','ksa')=101.5;
+fAP('ethane','t01','ksa')=0.75;
+fAP('arabheavy','t01','ksa')=6;
+fAP('diesel','t01','ksa')=27;
+fAP('HFO','t01','ksa')= 14;
+fAP('Coal','t01','ksa')=fintlprice('coal','t01');
 
 * set administered prices - UAE
-fAP('methane','t1','uae')=2.00;
-fAP('arablight','t1','uae')=fintlprice('arablight','t1');
-fAP('u-235','t1','uae')=fintlprice('u-235','t1');
-fAP('ethane','t1','uae')=2.00;
-fAP('arabheavy','t1','uae')=fintlprice('arablight','t1');
-fAP('diesel','t1','uae')=1e2;
-fAP('HFO','t1','uae')= 1e2;
-fAP('Coal','t1','uae')=fintlprice('coal','t1');
+fAP('methane','t01','uae')=2.00;
+fAP('arablight','t01','uae')=fintlprice('arablight','t01');
+fAP('u-235','t01','uae')=fintlprice('u-235','t01');
+fAP('ethane','t01','uae')=2.00;
+fAP('arabheavy','t01','uae')=fintlprice('arablight','t01');
+fAP('diesel','t01','uae')=1e2;
+fAP('HFO','t01','uae')= 1e2;
+fAP('Coal','t01','uae')=fintlprice('coal','t01');
 
 *ELfconsumpmax(ELf,trun,r,c)$rc(r,c)=fconsumpmax_save("EL",ELf,trun,r,c);
 *WAfconsumpmax(WAf,trun,r,c)$rc(r,c)=fconsumpmax_save("WA",WAf,trun,r,c);
@@ -117,13 +117,13 @@ ftrans.lo('methane',trun,'adwe','uae','omnr','omn')=50;
 ftrans.lo('arablight',trun,'east','ksa','bahr','bah')=100;
 
 * control plant builds and fuel
-*ELbld.up('CoalSteam',v,ttrun,r,c)=0;
-*ELop.fx('CoalSteam',v,ELl,ELs,ELday,'coal',trun,r,c)=0;
+ELbld.up('CoalSteam',v,ttrun,r,c)=0;
+ELop.fx('CoalSteam',v,ELl,ELs,ELday,'coal',trun,r,c)=0;
 
 
-* ======== t1 =========
+* ======== t01 =========
 if(ord(trun)=1,
-execute_loadpoint "results\gcclong\integratedMCP_p1.gdx";
+execute_loadpoint "data\integratedMCP_p1.gdx";
 
 fMP(f,c)= no;
 *fMP('methane')= yes;
@@ -134,16 +134,6 @@ ELfAP(ELf,c)= not fmp(ELf,c);
 
 WAfMP(WAf,c)$fmp(WAf,c)= yes;
 WAfAP(WAf,c)= not fmp(WAf,c);
-
-* GCC sets
-fMPt(f,c)=  no;
-*fMPt('methane',c)= yes;
-*fMPt(f,c)= yes;
-
-ELfMPt(ELf,c)$fMPt(ELf,c)= yes;
-WAfMPt(WAf,c)$fMPt(WAf,c)= yes;
-
-display fMPt,ELfMPt,WAfMPt,ttrun;
 
 tradecap=1;
 
@@ -164,22 +154,18 @@ ELfconsump_trade.fx(ELpd,ELf,ttrun,r,c)=0;
 WAFop_trade.fx(WApF,v,WAf,ttrun,r,c)=0;
 WAfconsump_trade.fx(fup,ttrun,rr,cc)$WAf(fup)=0;
 
-display ELfAP,ELAPf;
-
 solve integratedMCP using MCP;
-
 );
 
 
-* ======== t2 =========
+* ======== t02 =========
 if(ord(trun)=2,
 
-*execute_loadpoint "data\integratedMCP_p2.gdx";
+execute_loadpoint "data\integratedMCP_p2.gdx";
 
 fMP(f,c)= no;
-*fMP('methane')= yes;
-*fMP(f,c)= yes;
-* yes, not infeasible
+*fMP('methane',c)= yes;
+*fMP(f)= yes;
 
 ELfMP(ELf,c)$fmp(ELf,c)= yes;
 ELfAP(ELf,c)= not fmp(ELf,c);
@@ -187,18 +173,6 @@ ELfAP(ELf,c)= not fmp(ELf,c);
 WAfMP(WAf,c)$fmp(WAf,c)= yes;
 WAfAP(WAf,c)= not fmp(WAf,c);
 
-* GCC sets
-fMPt(f,c)=  no;
-*fMPt('methane',c)= yes;
-*fMPt(f,c)= yes;
-* yes, not infeasible
-
-ELfMPt(ELf,c)$fMPt(ELf,c)= yes;
-WAfMPt(WAf,c)$fMPt(WAf,c)= yes;
-
-display fMPt,ELfMPt,WAfMPt,ttrun;
-
-* works when 0
 tradecap=1;
 
 *$ontext
@@ -211,87 +185,91 @@ ELWAcoord('uae')=1;
 *$offtext
 
 * set administered prices - Bahrain
-fAP('methane','t2','bah')=2.75;
-fAP('arablight','t2','bah')=fintlprice('arablight','t1');
-fAP('u-235','t2','bah')=fintlprice('u-235','t1');
-fAP('ethane','t2','bah')=2.00;
-fAP('arabheavy','t2','bah')=fintlprice('arablight','t1');
-fAP('diesel','t2','bah')=268.48;
-fAP('HFO','t2','bah')= 1e2;
-fAP('Coal','t2','bah')=fintlprice('coal','t1');
+fAP('methane','t02','bah')=2.75;
+fAP('arablight','t02','bah')=fintlprice('arablight','t01');
+fAP('u-235','t02','bah')=fintlprice('u-235','t01');
+fAP('ethane','t02','bah')=2.00;
+fAP('arabheavy','t02','bah')=fintlprice('arablight','t01');
+fAP('diesel','t02','bah')=268.48;
+fAP('HFO','t02','bah')= 1e2;
+fAP('Coal','t02','bah')=fintlprice('coal','t01');
 
 * Kuwait
-*fAP('methane','t2','kuw')=fintlprice('methane','t2');
-fAP('methane','t2','kuw')=3.53;
-fAP('arablight','t2','kuw')=42.10;
-fAP('u-235','t2','kuw')=fintlprice('u-235','t1');
-fAP('ethane','t2','kuw')=2.00;
-fAP('arabheavy','t2','kuw')=fintlprice('arabheavy','t1');
-fAP('diesel','t2','kuw')=470.46;
-fAP('HFO','t2','kuw')= 297.91;
-fAP('Coal','t2','kuw')=fintlprice('coal','t1');
+*fAP('methane','t02','kuw')=fintlprice('methane','t02');
+fAP('methane','t02','kuw')=3.53;
+fAP('arablight','t02','kuw')=42.10;
+fAP('u-235','t02','kuw')=fintlprice('u-235','t01');
+fAP('ethane','t02','kuw')=2.00;
+fAP('arabheavy','t02','kuw')=fintlprice('arabheavy','t01');
+fAP('diesel','t02','kuw')=470.46;
+fAP('HFO','t02','kuw')= 297.91;
+fAP('Coal','t02','kuw')=fintlprice('coal','t01');
 
 * set administered prices - Oman
-fAP('methane','t2','omn')=2.00;
-fAP('arablight','t2','omn')=fintlprice('arablight','t1');
-fAP('u-235','t2','omn')=fintlprice('u-235','t1');
-fAP('ethane','t2','omn')=2.00;
-fAP('arabheavy','t2','omn')=fintlprice('arablight','t1');
-fAP('diesel','t2','omn')=1e2;
-fAP('HFO','t2','omn')= 1e2;
-fAP('Coal','t2','omn')=fintlprice('coal','t1');
+fAP('methane','t02','omn')=2.00;
+fAP('arablight','t02','omn')=fintlprice('arablight','t01');
+fAP('u-235','t02','omn')=fintlprice('u-235','t01');
+fAP('ethane','t02','omn')=2.00;
+fAP('arabheavy','t02','omn')=fintlprice('arablight','t01');
+fAP('diesel','t02','omn')=1e2;
+fAP('HFO','t02','omn')= 1e2;
+fAP('Coal','t02','omn')=fintlprice('coal','t01');
 
 * set administered prices - Qatar
-fAP('methane','t2','qat')=1.50;
-fAP('arablight','t2','qat')=fintlprice('arablight','t1');
-fAP('u-235','t2','qat')=fintlprice('u-235','t1');
-fAP('ethane','t2','qat')=2.00;
-fAP('arabheavy','t2','qat')=fintlprice('arablight','t1');
-fAP('diesel','t2','qat')=1e2;
-fAP('HFO','t2','qat')= 1e2;
-fAP('Coal','t2','qat')=fintlprice('coal','t1');
+fAP('methane','t02','qat')=1.50;
+fAP('arablight','t02','qat')=fintlprice('arablight','t01');
+fAP('u-235','t02','qat')=fintlprice('u-235','t01');
+fAP('ethane','t02','qat')=2.00;
+fAP('arabheavy','t02','qat')=fintlprice('arablight','t01');
+fAP('diesel','t02','qat')=1e2;
+fAP('HFO','t02','qat')= 1e2;
+fAP('Coal','t02','qat')=fintlprice('coal','t01');
 
 * set adminstered prices - KSA
-fAP('methane','t2','ksa')=1.25;
-*fAP('arablight','t2','ksa')=6.35;
-fAP('arablight','t2','ksa')=7.25;
-fAP('u-235','t2','ksa')=101.5;
-fAP('ethane','t2','ksa')=0.75;
-fAP('arabheavy','t2','ksa')=6;
+fAP('methane','t02','ksa')=1.25;
+*fAP('arablight','t02','ksa')=6.35;
+fAP('arablight','t02','ksa')=7.25;
+fAP('u-235','t02','ksa')=101.5;
+fAP('ethane','t02','ksa')=0.75;
+fAP('arabheavy','t02','ksa')=6;
 
-fAP('diesel','t2','ksa')=fAP('diesel','t1','ksa');
-fAP('HFO','t2','ksa')= fAP('HFO','t1','ksa');
-fAP('Coal','t2','ksa')=fintlprice('coal','t1');
+fAP('diesel','t02','ksa')=fAP('diesel','t01','ksa');
+fAP('HFO','t02','ksa')= fAP('HFO','t01','ksa');
+fAP('Coal','t02','ksa')=fintlprice('coal','t01');
 
 
 * set administered prices - UAE
-fAP('methane','t2','uae')=2.00;
-fAP('arablight','t2','uae')=fintlprice('arablight','t1');
-fAP('u-235','t2','uae')=fintlprice('u-235','t1');
-fAP('ethane','t2','uae')=2.00;
-fAP('arabheavy','t2','uae')=fintlprice('arablight','t1');
-fAP('diesel','t2','uae')=1e2;
-fAP('HFO','t2','uae')= 1e2;
-fAP('Coal','t2','uae')=fintlprice('coal','t1');
+fAP('methane','t02','uae')=2.00;
+fAP('arablight','t02','uae')=fintlprice('arablight','t01');
+fAP('u-235','t02','uae')=fintlprice('u-235','t01');
+fAP('ethane','t02','uae')=2.00;
+fAP('arabheavy','t02','uae')=fintlprice('arablight','t01');
+fAP('diesel','t02','uae')=1e2;
+fAP('HFO','t02','uae')= 1e2;
+fAP('Coal','t02','uae')=fintlprice('coal','t01');
+
+
 
 ELAPf(ELf,ttrun,r,c) = fAP(ELf,ttrun,c);
 WAAPf(WAf,ttrun,r,c) = fAP(WAf,ttrun,c);
+
 
 ELop_trade.fx(ELpd,v,ELl,ELs,ELday,ELf,ttrun,r,c)=0;
 ELfconsump_trade.fx(ELpd,ELf,ttrun,r,c)=0;
 WAFop_trade.fx(WApF,v,WAf,ttrun,r,c)=0;
 WAfconsump_trade.fx(fup,ttrun,rr,cc)$WAf(fup)=0;
+
 display ELfAP,ELAPf;
 
 solve integratedMCP using MCP;
 
 );
 
-* ===== t3 ======
+* ===== t03 ======
 
 if((ord(trun)=3),
 
-*execute_loadpoint "data\integratedMCP_p3.gdx";
+execute_loadpoint "data\integratedMCP_p3.gdx";
 
 fMP(f,c)= no;
 *fMP('methane')= yes;
@@ -302,14 +280,6 @@ ELfAP(ELf,c)= not fmp(ELf,c);
 
 WAfMP(WAf,c)$fmp(WAf,c)= yes;
 WAfAP(WAf,c)= not fmp(WAf,c);
-
-* GCC sets
-fMPt(f,c)=  no;
-*fMPt('methane',c)= yes;
-*fMPt(f,c)= yes;
-
-ELfMPt(ELf,c)$fMPt(ELf,c)= yes;
-WAfMPt(WAf,c)$fMPt(WAf,c)= yes;
 
 tradecap=1;
 
@@ -323,68 +293,68 @@ ELWAcoord('uae')=1;
 *$offtext
 
 * set administered prices - Bahrain
-fAP('methane','t3','bah')=2.75;
-fAP('arablight','t3','bah')=fintlprice('arablight','t1');
-fAP('u-235','t3','bah')=fintlprice('u-235','t1');
-fAP('ethane','t3','bah')=2.00;
-fAP('arabheavy','t3','bah')=fintlprice('arablight','t1');
-fAP('diesel','t3','bah')=268.48;
-fAP('HFO','t3','bah')= 1e2;
-fAP('Coal','t3','bah')=fintlprice('coal','t1');
+fAP('methane','t03','bah')=2.75;
+fAP('arablight','t03','bah')=fintlprice('arablight','t01');
+fAP('u-235','t03','bah')=fintlprice('u-235','t01');
+fAP('ethane','t03','bah')=2.00;
+fAP('arabheavy','t03','bah')=fintlprice('arablight','t01');
+fAP('diesel','t03','bah')=268.48;
+fAP('HFO','t03','bah')= 1e2;
+fAP('Coal','t03','bah')=fintlprice('coal','t01');
 
 * Kuwait
-*fAP('methane','t3','kuw')=fintlprice('methane','t3');
-fAP('methane','t3','kuw')=3.53;
-fAP('arablight','t3','kuw')=42.10;
-fAP('u-235','t3','kuw')=fintlprice('u-235','t1');
-fAP('ethane','t3','kuw')=2.00;
-fAP('arabheavy','t3','kuw')=fintlprice('arabheavy','t1');
-fAP('diesel','t3','kuw')=470.46;
-fAP('HFO','t3','kuw')= 297.91;
-fAP('Coal','t3','kuw')=fintlprice('coal','t1');
+*fAP('methane','t03','kuw')=fintlprice('methane','t03');
+fAP('methane','t03','kuw')=3.53;
+fAP('arablight','t03','kuw')=42.10;
+fAP('u-235','t03','kuw')=fintlprice('u-235','t01');
+fAP('ethane','t03','kuw')=2.00;
+fAP('arabheavy','t03','kuw')=fintlprice('arabheavy','t01');
+fAP('diesel','t03','kuw')=470.46;
+fAP('HFO','t03','kuw')= 297.91;
+fAP('Coal','t03','kuw')=fintlprice('coal','t01');
 
 * set administered prices - Oman
-fAP('methane','t3','omn')=2.00;
-fAP('arablight','t3','omn')=fintlprice('arablight','t1');
-fAP('u-235','t3','omn')=fintlprice('u-235','t1');
-fAP('ethane','t3','omn')=2.00;
-fAP('arabheavy','t3','omn')=fintlprice('arablight','t1');
-fAP('diesel','t3','omn')=1e2;
-fAP('HFO','t3','omn')= 1e2;
-fAP('Coal','t3','omn')=fintlprice('coal','t1');
+fAP('methane','t03','omn')=2.00;
+fAP('arablight','t03','omn')=fintlprice('arablight','t01');
+fAP('u-235','t03','omn')=fintlprice('u-235','t01');
+fAP('ethane','t03','omn')=2.00;
+fAP('arabheavy','t03','omn')=fintlprice('arablight','t01');
+fAP('diesel','t03','omn')=1e2;
+fAP('HFO','t03','omn')= 1e2;
+fAP('Coal','t03','omn')=fintlprice('coal','t01');
 
 * set administered prices - Qatar
-fAP('methane','t3','qat')=1.50;
-fAP('arablight','t3','qat')=fintlprice('arablight','t1');
-fAP('u-235','t3','qat')=fintlprice('u-235','t1');
-fAP('ethane','t3','qat')=2.00;
-fAP('arabheavy','t3','qat')=fintlprice('arablight','t1');
-fAP('diesel','t3','qat')=1e2;
-fAP('HFO','t3','qat')= 1e2;
-fAP('Coal','t3','qat')=fintlprice('coal','t1');
+fAP('methane','t03','qat')=1.50;
+fAP('arablight','t03','qat')=fintlprice('arablight','t01');
+fAP('u-235','t03','qat')=fintlprice('u-235','t01');
+fAP('ethane','t03','qat')=2.00;
+fAP('arabheavy','t03','qat')=fintlprice('arablight','t01');
+fAP('diesel','t03','qat')=1e2;
+fAP('HFO','t03','qat')= 1e2;
+fAP('Coal','t03','qat')=fintlprice('coal','t01');
 
 * set adminstered prices - KSA
-fAP('methane','t3','ksa')=1.25;
-*fAP('arablight','t3','ksa')=6.35;
-fAP('arablight','t3','ksa')=7.25;
-fAP('u-235','t3','ksa')=101.5;
-fAP('ethane','t3','ksa')=0.75;
-fAP('arabheavy','t3','ksa')=6;
+fAP('methane','t03','ksa')=1.25;
+*fAP('arablight','t03','ksa')=6.35;
+fAP('arablight','t03','ksa')=7.25;
+fAP('u-235','t03','ksa')=101.5;
+fAP('ethane','t03','ksa')=0.75;
+fAP('arabheavy','t03','ksa')=6;
 
-fAP('diesel','t3','ksa')=fAP('diesel','t1','ksa');
-fAP('HFO','t3','ksa')= fAP('HFO','t1','ksa');
-fAP('Coal','t3','ksa')=fintlprice('coal','t1');
+fAP('diesel','t03','ksa')=fAP('diesel','t01','ksa');
+fAP('HFO','t03','ksa')= fAP('HFO','t01','ksa');
+fAP('Coal','t03','ksa')=fintlprice('coal','t01');
 
 
 * set administered prices - UAE
-fAP('methane','t3','uae')=2.00;
-fAP('arablight','t3','uae')=fintlprice('arablight','t1');
-fAP('u-235','t3','uae')=fintlprice('u-235','t1');
-fAP('ethane','t3','uae')=2.00;
-fAP('arabheavy','t3','uae')=fintlprice('arablight','t1');
-fAP('diesel','t3','uae')=1e2;
-fAP('HFO','t3','uae')= 1e2;
-fAP('Coal','t3','uae')=fintlprice('coal','t1');
+fAP('methane','t03','uae')=2.00;
+fAP('arablight','t03','uae')=fintlprice('arablight','t01');
+fAP('u-235','t03','uae')=fintlprice('u-235','t01');
+fAP('ethane','t03','uae')=2.00;
+fAP('arabheavy','t03','uae')=fintlprice('arablight','t01');
+fAP('diesel','t03','uae')=1e2;
+fAP('HFO','t03','uae')= 1e2;
+fAP('Coal','t03','uae')=fintlprice('coal','t01');
 
 ELAPf(ELf,ttrun,r,c) = fAP(ELf,ttrun,c);
 WAAPf(WAf,ttrun,r,c) = fAP(WAf,ttrun,c);
@@ -431,13 +401,13 @@ solve integratedMCP using MCP;
 );
 
 
-* ===== t4 ======
+* ===== t04 ======
 
 if((ord(trun)=4),
 
-*execute_loadpoint "data\integratedMCP_p4.gdx";
+execute_loadpoint "data\integratedMCP_p4.gdx";
 
-*WAbld.up('SWRO','new','t4',r,c)=1;
+*WAbld.up('SWRO','new','t04',r,c)=1;
 
 fMP(f,c)= no;
 *fMP('methane')= yes;
@@ -448,14 +418,6 @@ ELfAP(ELf,c)= not fmp(ELf,c);
 
 WAfMP(WAf,c)$fmp(WAf,c)= yes;
 WAfAP(WAf,c)= not fmp(WAf,c);
-
-* GCC sets
-fMPt(f,c)=  no;
-*fMPt('methane',c)= yes;
-*fMPt(f,c)= yes;
-
-ELfMPt(ELf,c)$fMPt(ELf,c)= yes;
-WAfMPt(WAf,c)$fMPt(WAf,c)= yes;
 
 tradecap=1;
 
@@ -469,68 +431,68 @@ ELWAcoord('uae')=1;
 *$offtext
 
 * set administered prices - Bahrain
-fAP('methane','t4','bah')=2.75;
-fAP('arablight','t4','bah')=fintlprice('arablight','t1');
-fAP('u-235','t4','bah')=fintlprice('u-235','t1');
-fAP('ethane','t4','bah')=2.00;
-fAP('arabheavy','t4','bah')=fintlprice('arablight','t1');
-fAP('diesel','t4','bah')=268.48;
-fAP('HFO','t4','bah')= 1e2;
-fAP('Coal','t4','bah')=fintlprice('coal','t1');
+fAP('methane','t04','bah')=2.75;
+fAP('arablight','t04','bah')=fintlprice('arablight','t01');
+fAP('u-235','t04','bah')=fintlprice('u-235','t01');
+fAP('ethane','t04','bah')=2.00;
+fAP('arabheavy','t04','bah')=fintlprice('arablight','t01');
+fAP('diesel','t04','bah')=268.48;
+fAP('HFO','t04','bah')= 1e2;
+fAP('Coal','t04','bah')=fintlprice('coal','t01');
 
 * Kuwait
-*fAP('methane','t4','kuw')=fintlprice('methane','t4');
-fAP('methane','t4','kuw')=3.53;
-fAP('arablight','t4','kuw')=42.10;
-fAP('u-235','t4','kuw')=fintlprice('u-235','t1');
-fAP('ethane','t4','kuw')=2.00;
-fAP('arabheavy','t4','kuw')=fintlprice('arabheavy','t1');
-fAP('diesel','t4','kuw')=470.46;
-fAP('HFO','t4','kuw')= 297.91;
-fAP('Coal','t4','kuw')=fintlprice('coal','t1');
+*fAP('methane','t04','kuw')=fintlprice('methane','t04');
+fAP('methane','t04','kuw')=3.53;
+fAP('arablight','t04','kuw')=42.10;
+fAP('u-235','t04','kuw')=fintlprice('u-235','t01');
+fAP('ethane','t04','kuw')=2.00;
+fAP('arabheavy','t04','kuw')=fintlprice('arabheavy','t01');
+fAP('diesel','t04','kuw')=470.46;
+fAP('HFO','t04','kuw')= 297.91;
+fAP('Coal','t04','kuw')=fintlprice('coal','t01');
 
 * set administered prices - Oman
-fAP('methane','t4','omn')=2.00;
-fAP('arablight','t4','omn')=fintlprice('arablight','t1');
-fAP('u-235','t4','omn')=fintlprice('u-235','t1');
-fAP('ethane','t4','omn')=2.00;
-fAP('arabheavy','t4','omn')=fintlprice('arablight','t1');
-fAP('diesel','t4','omn')=1e2;
-fAP('HFO','t4','omn')= 1e2;
-fAP('Coal','t4','omn')=fintlprice('coal','t1');
+fAP('methane','t04','omn')=2.00;
+fAP('arablight','t04','omn')=fintlprice('arablight','t01');
+fAP('u-235','t04','omn')=fintlprice('u-235','t01');
+fAP('ethane','t04','omn')=2.00;
+fAP('arabheavy','t04','omn')=fintlprice('arablight','t01');
+fAP('diesel','t04','omn')=1e2;
+fAP('HFO','t04','omn')= 1e2;
+fAP('Coal','t04','omn')=fintlprice('coal','t01');
 
 * set administered prices - Qatar
-fAP('methane','t4','qat')=1.50;
-fAP('arablight','t4','qat')=fintlprice('arablight','t1');
-fAP('u-235','t4','qat')=fintlprice('u-235','t1');
-fAP('ethane','t4','qat')=2.00;
-fAP('arabheavy','t4','qat')=fintlprice('arablight','t1');
-fAP('diesel','t4','qat')=1e2;
-fAP('HFO','t4','qat')= 1e2;
-fAP('Coal','t4','qat')=fintlprice('coal','t1');
+fAP('methane','t04','qat')=1.50;
+fAP('arablight','t04','qat')=fintlprice('arablight','t01');
+fAP('u-235','t04','qat')=fintlprice('u-235','t01');
+fAP('ethane','t04','qat')=2.00;
+fAP('arabheavy','t04','qat')=fintlprice('arablight','t01');
+fAP('diesel','t04','qat')=1e2;
+fAP('HFO','t04','qat')= 1e2;
+fAP('Coal','t04','qat')=fintlprice('coal','t01');
 
 * set adminstered prices - KSA
-fAP('methane','t4','ksa')=1.25;
-*fAP('arablight','t4','ksa')=6.35;
-fAP('arablight','t4','ksa')=7.25;
-fAP('u-235','t4','ksa')=101.5;
-fAP('ethane','t4','ksa')=0.75;
-fAP('arabheavy','t4','ksa')=6;
+fAP('methane','t04','ksa')=1.25;
+*fAP('arablight','t04','ksa')=6.35;
+fAP('arablight','t04','ksa')=7.25;
+fAP('u-235','t04','ksa')=101.5;
+fAP('ethane','t04','ksa')=0.75;
+fAP('arabheavy','t04','ksa')=6;
 
-fAP('diesel','t4','ksa')=fAP('diesel','t1','ksa');
-fAP('HFO','t4','ksa')= fAP('HFO','t1','ksa');
-fAP('Coal','t4','ksa')=fintlprice('coal','t4')*coalpricegrowth('t4');
+fAP('diesel','t04','ksa')=fAP('diesel','t01','ksa');
+fAP('HFO','t04','ksa')= fAP('HFO','t01','ksa');
+fAP('Coal','t04','ksa')=fintlprice('coal','t04')*coalpricegrowth('t04');
 
 
 * set administered prices - UAE
-fAP('methane','t4','uae')=2.00;
-fAP('arablight','t4','uae')=fintlprice('arablight','t1');
-fAP('u-235','t4','uae')=fintlprice('u-235','t1');
-fAP('ethane','t4','uae')=2.00;
-fAP('arabheavy','t4','uae')=fintlprice('arablight','t1');
-fAP('diesel','t4','uae')=1e2;
-fAP('HFO','t4','uae')= 1e2;
-fAP('Coal','t4','uae')=fintlprice('coal','t4')*coalpricegrowth('t4');
+fAP('methane','t04','uae')=2.00;
+fAP('arablight','t04','uae')=fintlprice('arablight','t01');
+fAP('u-235','t04','uae')=fintlprice('u-235','t01');
+fAP('ethane','t04','uae')=2.00;
+fAP('arabheavy','t04','uae')=fintlprice('arablight','t01');
+fAP('diesel','t04','uae')=1e2;
+fAP('HFO','t04','uae')= 1e2;
+fAP('Coal','t04','uae')=fintlprice('coal','t04')*coalpricegrowth('t04');
 
 ELAPf(ELf,ttrun,r,c) = fAP(ELf,ttrun,c);
 WAAPf(WAf,ttrun,r,c) = fAP(WAf,ttrun,c);
@@ -555,21 +517,12 @@ fMP('diesel',c)=yes;
 fMP('HFO',c)=yes;
 
 ELWAcoord(c)=0;
-
-* GCC sets
-*fMPt(f,c)=  no;
-*fMPt('methane',c)= yes;
-fMPt(f,c)= yes;
-
-ELfMPt(ELf,c)$fMPt(ELf,c)= yes;
-WAfMPt(WAf,c)$fMPt(WAf,c)= yes;
-
 tradecap=1;
 
 
 *fAP('Coal',trun,'ksa')$(ord(trun)>3)=fintlprice('coal',trun)*coalpricegrowth(trun);
 
-*WAbld.up('SWRO','new','t4',r,c)=1;
+*WAbld.up('SWRO','new','t04',r,c)=1;
 
 *$ontext
 ELfMP(ELf,c)$fmp(ELf,c)= yes;
@@ -583,7 +536,7 @@ ELAPf(ELf,ttrun,r,c) = fAP(ELf,ttrun,c);
 WAAPf(WAf,ttrun,r,c) = fAP(WAf,ttrun,c);
 
 display ELfMP,WAfMP,ELAPf,WAAPf,trun,ttrun,t;
-$ontext
+*$ontext
 * turn this back on!!!
 ELbld.fx('CoalSteam',v,ttrun,r,c)$(ord(ttrun)>3)=0;
 
@@ -596,27 +549,26 @@ ELbld.fx('Nuclear','new','t14','east','ksa')=0;
 ELrenbld.up(ELpsw,v,ttrun,r,c)$(ord(ttrun)>3)=2;
 
 
-ELrenbld.lo('pv',vn,'t5','east','ksa')=0.5;
-ELrenbld.lo('wind',vn,'t5','east','ksa')=0.5;
-ELrenbld.lo('pv',vn,'t6','east','ksa')=0.5;
-ELrenbld.lo('wind',vn,'t6','east','ksa')=0.5;
+ELrenbld.lo('pv',vn,'t05','east','ksa')=0.5;
+ELrenbld.lo('wind',vn,'t05','east','ksa')=0.5;
+ELrenbld.lo('pv',vn,'t06','east','ksa')=0.5;
+ELrenbld.lo('wind',vn,'t06','east','ksa')=0.5;
 
-ELrenbld.lo('pv',vn,'t7','east','ksa')=1.0;
-ELrenbld.lo('wind',vn,'t7','east','ksa')=1.0;
+ELrenbld.lo('pv',vn,'t07','east','ksa')=1.0;
+ELrenbld.lo('wind',vn,'t07','east','ksa')=1.0;
 
-ELrenbld.lo('pv',vn,'t8','east','ksa')=1.5;
-ELrenbld.lo('wind',vn,'t8','east','ksa')=1.0;
+ELrenbld.lo('pv',vn,'t08','east','ksa')=1.5;
+ELrenbld.lo('wind',vn,'t08','east','ksa')=1.0;
 
-ELrenbld.lo('pv',vn,'t9','east','ksa')=1.5;
-ELrenbld.lo('wind',vn,'t9','east','ksa')=1.5;
-$offtext
+ELrenbld.lo('pv',vn,'t09','east','ksa')=1.5;
+ELrenbld.lo('wind',vn,'t09','east','ksa')=1.5;
 
 
-*ELop_trade.fx(ELpd,v,ELl,ELs,ELday,ELf,ttrun,r,c)=0;
-*ELfconsump_trade.fx(ELpd,ELf,ttrun,r,c)=0;
-*WAFop_trade.fx(WApF,v,WAf,ttrun,r,c)=0;
-*WAfconsump_trade.fx(fup,ttrun,rr,cc)$WAf(fup)=0;
 
+ELop_trade.fx(ELpd,v,ELl,ELs,ELday,ELf,ttrun,r,c)=0;
+ELfconsump_trade.fx(ELpd,ELf,ttrun,r,c)=0;
+WAFop_trade.fx(WApF,v,WAf,ttrun,r,c)=0;
+WAfconsump_trade.fx(fup,ttrun,rr,cc)$WAf(fup)=0;
 *$offtext
 *ELrenbld.up(ELpsw,v,t,r,c)=5;
 

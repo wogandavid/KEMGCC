@@ -27,6 +27,7 @@ RWEMquant    emissions by sector in tons
 RWEMallquant emissions of all sectors in tons
 
 ELWAcap capacity of power and cogen plants
+ELWAcap_cogen 
 
 RWcaputil  capacity utilization
 

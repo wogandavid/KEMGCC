@@ -21,7 +21,9 @@ LPG       43.74
 91motorgas 42.41
 95motorgas 42.41
 Jet-fuel  41.63
-Coal      23.39/
+Coal      23.39
+*u-235     3900
+/
 ;
 
 Parameter fPCconv(fup) conversion factors from the units used in petrochemicals;

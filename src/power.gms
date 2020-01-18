@@ -21,17 +21,20 @@ ELfconsumpmax('u-235',time,r,c)=9e9;
 ELfconsumpmax('Coal',time,r,c)=9e9;
 
 * KSA
+ELfconsumpmax('Arablight',time,'cent','ksa')=400;
+ELfconsumpmax('Arablight',time,'east','ksa')=400;
+ELfconsumpmax('Arablight',time,'west','ksa')=200;
 
 ELfconsumpmax('methane',time,'west','ksa')=30.00442156;
 ELfconsumpmax('methane',time,'cent','ksa')=375.13244;
 ELfconsumpmax('methane',time,'east','ksa')=495.0079;
 $ontext
-ELfconsumpmax('methane',time,'west','ksa')=1e3;
-ELfconsumpmax('methane',time,'cent','ksa')=1e3;
-ELfconsumpmax('methane',time,'east','ksa')=1e3;
+ELfconsumpmax('methane',time,'west','ksa')=100;
+ELfconsumpmax('methane',time,'cent','ksa')=500;
+ELfconsumpmax('methane',time,'east','ksa')=600;
 $offtext
 ELfconsumpmax('HFO',time,r,c)=0;
-ELfconsumpmax('HFO',time,'west','ksa')=6.473516;
+ELfconsumpmax('HFO',time,'west','ksa')=7;
 
 ELfconsumpmax('diesel',time,'east','ksa')=1.586186;
 ELfconsumpmax('diesel',time,'west','ksa')=3.660628;
@@ -178,20 +181,20 @@ ELcapital('Wind',time,r,c)=      2020;
 *$offtext
 
 $ontext
-         ELcapital('Steam','t1',r,c)=1584;
-         ELcapital('Steam','t1','east','ksa')=1680;
-         ELcapital('Stscrub','t1',r,c)=2026;
-         ELcapital('Stscrub','t1','east','ksa')=2122;
-         ELcapital('GT','t1',r,c)=1069;
-         ELcapital('GT','t1','cent','ksa')=1176.5;
-         ELcapital('CC','t1',r,c)=943;
-         ELcapital('CC','t1','cent','ksa')=1102;
-         ELcapital('GTtoCC','t1',r,c)=240;
-         ELcapital('PV','t1',r,c)=1436;
-         ELcapital('CSP','t1',r,c)=7448;
-         ELcapital('Wind','t1',r,c)=1804;
-         ELcapital('Nuclear','t1',r,c)=6500;
-         ELcapital('CoalSteam','t1',r,c)=2934;
+         ELcapital('Steam','t01',r,c)=1584;
+         ELcapital('Steam','t01','east','ksa')=1680;
+         ELcapital('Stscrub','t01',r,c)=2026;
+         ELcapital('Stscrub','t01','east','ksa')=2122;
+         ELcapital('GT','t01',r,c)=1069;
+         ELcapital('GT','t01','cent','ksa')=1176.5;
+         ELcapital('CC','t01',r,c)=943;
+         ELcapital('CC','t01','cent','ksa')=1102;
+         ELcapital('GTtoCC','t01',r,c)=240;
+         ELcapital('PV','t01',r,c)=1436;
+         ELcapital('CSP','t01',r,c)=7448;
+         ELcapital('Wind','t01',r,c)=1804;
+         ELcapital('Nuclear','t01',r,c)=6500;
+         ELcapital('CoalSteam','t01',r,c)=2934;
 $offtext
 
 Parameter
@@ -313,7 +316,7 @@ Parameter ELleadtime(ELp) Lead time for plant construction units of time
  PV      2
  CSP     3
  Wind    3
- Nuclear 9
+ Nuclear 6
 * Nuclear 10
 /
 $ontext
@@ -577,76 +580,76 @@ $offtext
 
 Table ELdemgro(time,r,c) Electricity demand growth rate relative to initial condition
          west.ksa    sout.ksa   cent.ksa    east.ksa
-t1       1           1          1           1
-t2       1.06        1.16       1.06        1.06
-t3       1.11        1.24       1.11        1.11
-t4       1.15        1.33       1.16        1.17
-t5       1.20        1.43       1.20        1.25
-t6       1.25        1.52       1.25        1.33
-t7       1.25        1.61       1.30        1.41
-t8       1.30        1.71       1.35        1.50
-t9       1.35        1.80       1.40        1.59
-t10      1.42        1.90       1.46        1.71
-t11      1.48        2.00       1.51        1.83
-t12      1.55        2.10       1.57        1.97
-t13      1.61        2.22       1.63        2.12
-t14      1.68        2.35       1.69        2.28
-t15      1.74        2.46       1.76        2.40
-t16      1.80        2.57       1.83        2.53
-t17      1.88        2.68       1.90        2.68
-t18      1.96        2.75       1.97        2.82
-t19      2.04        2.82       2.05        2.98
-t20      2.10        2.87       2.11        3.08
-t21      2.16        2.93       2.17        3.19
-t22      2.21        2.98       2.23        3.30
+t01       1           1          1           1
+t02       1.06        1.16       1.06        1.06
+t03       1.11        1.24       1.11        1.11
+t04       1.15        1.33       1.16        1.17
+t05       1.20        1.43       1.20        1.25
+t06       1.25        1.52       1.25        1.33
+t07       1.25        1.61       1.30        1.41
+t08       1.30        1.71       1.35        1.50
+t09       1.35        1.80       1.40        1.59
+t10       1.42        1.90       1.46        1.71
+t11       1.48        2.00       1.51        1.83
+t12       1.55        2.10       1.57        1.97
+t13       1.61        2.22       1.63        2.12
+t14       1.68        2.35       1.69        2.28
+t15       1.74        2.46       1.76        2.40
+t16       1.80        2.57       1.83        2.53
+t17       1.88        2.68       1.90        2.68
+t18       1.96        2.75       1.97        2.82
+t19       2.04        2.82       2.05        2.98
+t20       2.10        2.87       2.11        3.08
+t21       2.16        2.93       2.17        3.19
+t22       2.21        2.98       2.23        3.30
 
 +        adwe.uae        dewa.uae        sewa.uae        fewa.uae
-t1       1               1               1               1
-t2       1.03            1.05            1.06            1.08
-t3       1.07            1.11            1.13            1.17
-t4       1.11            1.16            1.20            1.27
-t5       1.14            1.22            1.28            1.38
-t6       1.18            1.29            1.36            1.49
-t7       1.22            1.35            1.44            1.61
-t8       1.26            1.39            1.49            1.68
-t9       1.31            1.42            1.54            1.75
-t10      1.35            1.46            1.59            1.82
-t11      1.40            1.50            1.64            1.90
-t12      1.44            1.54            1.69            1.98
-t13      1.49            1.58            1.74            2.06
-t14      1.54            1.62            1.80            2.14
-t15      1.60            1.66            1.85            2.23
-t16      1.65            1.70            1.91            2.33
-t17      1.75            1.75            1.75            1.75
-t18      1.75            1.75            1.75            1.75
-t19      1.75            1.75            1.75            1.75
-t20      1.75            1.75            1.75            1.75
-t21      1.75            1.75            1.75            1.75
-t22      1.75            1.75            1.75            1.75
+t01       1               1               1               1
+t02       1.03            1.05            1.06            1.08
+t03       1.07            1.11            1.13            1.17
+t04       1.11            1.16            1.20            1.27
+t05       1.14            1.22            1.28            1.38
+t06       1.18            1.29            1.36            1.49
+t07       1.22            1.35            1.44            1.61
+t08       1.26            1.39            1.49            1.68
+t09       1.31            1.42            1.54            1.75
+t10       1.35            1.46            1.59            1.82
+t11       1.40            1.50            1.64            1.90
+t12       1.44            1.54            1.69            1.98
+t13       1.49            1.58            1.74            2.06
+t14       1.54            1.62            1.80            2.14
+t15       1.60            1.66            1.85            2.23
+t16       1.65            1.70            1.91            2.33
+t17       1.75            1.75            1.75            1.75
+t18       1.75            1.75            1.75            1.75
+t19       1.75            1.75            1.75            1.75
+t20       1.75            1.75            1.75            1.75
+t21       1.75            1.75            1.75            1.75
+t22       1.75            1.75            1.75            1.75
 
 +        qatr.qat        kuwr.kuw        bahr.bah        omnr.omn
-t1       1               1               1.00            1.00
-t2       1.05            1.05            1.06            1.06
-t3       1.09            1.09            1.10            1.10
-t4       1.15            1.15            1.14            1.14
-t5       1.20            1.20            1.19            1.19
-t6       1.26            1.26            1.23            1.23
-t7       1.32            1.32            1.28            1.28
-t8       1.37            1.37            1.33            1.33
-t9       1.44            1.44            1.39            1.39
-t10      1.51            1.51            1.44            1.44
-t11      1.58            1.58            1.50            1.50
-t12      1.65            1.65            1.55            1.55
-t13      1.73            1.73            1.61            1.61
-t14      1.81            1.81            1.68            1.68
-t15      1.90            1.90            1.74            1.74
-t16      1.99            1.99            1.81            1.81
-t17      2.00            2.00            1.85            1.85
-t18      2.00            2.00            1.85            1.85
-t19      2.00            2.00            1.85            1.85
-t20      2.00            2.00            1.85            1.85
-t21      2.00            2.00            1.85            1.85
-t22      2.00            2.00            1.85            1.85
+t01       1               1               1.00            1.00
+t02       1.05            1.05            1.06            1.06
+t03       1.09            1.09            1.10            1.10
+t04       1.15            1.15            1.14            1.14
+t05       1.20            1.20            1.19            1.19
+t06       1.26            1.26            1.23            1.23
+t07       1.32            1.32            1.28            1.28
+t08       1.37            1.37            1.33            1.33
+t09       1.44            1.44            1.39            1.39
+t10       1.51            1.51            1.44            1.44
+t11       1.58            1.58            1.50            1.50
+t12       1.65            1.65            1.55            1.55
+t13       1.73            1.73            1.61            1.61
+t14       1.81            1.81            1.68            1.68
+t15       1.90            1.90            1.74            1.74
+t16       1.99            1.99            1.81            1.81
+t17       2.00            2.00            1.85            1.85
+t18       2.00            2.00            1.85            1.85
+t19       2.00            2.00            1.85            1.85
+t20       2.00            2.00            1.85            1.85
+t21       2.00            2.00            1.85            1.85
+t22       2.00            2.00            1.85            1.85
 ;
 
 *The solar DNI curves were obtained from NREL/KACST. The cities used for each region
@@ -1330,13 +1333,13 @@ ELretirement(ELp,v,time,r,c)=0;
 ELaddition(ELp,v,time,r,c)=0;
 
 * set existing capacities
-ELexistcp.fx(ELpd,v,'t1',r,c)=ELexist(ELpd,v,r,c);
-ELrenexistcp.fx(ELpsw,v,'t1',r,c)=ELexist(ELpsw,v,r,c);
+ELexistcp.fx(ELpd,v,'t01',r,c)=ELexist(ELpd,v,r,c);
+ELrenexistcp.fx(ELpsw,v,'t01',r,c)=ELexist(ELpsw,v,r,c);
 ELbld.fx('CCcon','new',trun,r,c)=0;
-ELgttocc.fx('GTtoCC','old','t1',r,c)=0.10*ELexist('GT','old',r,c);
+ELgttocc.fx('GTtoCC','old','t01',r,c)=0.10*ELexist('GT','old',r,c);
 
-*ELfconsump.up(ELpd,'HFO',trun,r,c)= ELfconsumpmax('HFO','t1',r,c);
-*ELfconsump.up(ELpd,'diesel',trun,r,c)= ELfconsumpmax('diesel','t1',r,c);
+*ELfconsump.up(ELpd,'HFO',trun,r,c)= ELfconsumpmax('HFO','t01',r,c);
+*ELfconsump.up(ELpd,'diesel',trun,r,c)= ELfconsumpmax('diesel','t01',r,c);
 
 
 Equations

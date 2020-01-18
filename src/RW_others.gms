@@ -1,9 +1,9 @@
 * Unnamed reports used for Qatar calibration
 
 parameters
-report6 short run marginal costs - fuel consumption and var om
-report7 up-spin fuel consumption
-report9 electricity production by technology and load segment for excel tabulation
+report06 short run marginal costs - fuel consumption and var om
+report07 up-spin fuel consumption
+report09 electricity production by technology and load segment for excel tabulation
 report10 water production by technology and load segment for excel tabulation
 report11 to compute capacity utilization
 report12 water demand
@@ -26,37 +26,37 @@ report_xls report for excel tabulation
 ;
 
 * created when checking ELsup.m
-report6(w,trun,ELp,v,ELf,r,c)$rc(r,c)  =
+report06(w,trun,ELp,v,ELf,r,c)$rc(r,c)  =
   ELfuelburn(ELp,v,ELf,r,c)*Dfdem.l(ELf,trun,r,c)
  +ELomcst(ELp,v,r,c);
 
-report7(trun,ELpd,v,ELl,ELs,ELday,ELf,r,c)$(rc(r,c) and ELfspin(ELf) and Elfuelburn(ELpd,v,ELf,r,c)>0 and ELpspin(ELpd)) =
+report07(trun,ELpd,v,ELl,ELs,ELday,ELf,r,c)$(rc(r,c) and ELfspin(ELf) and Elfuelburn(ELpd,v,ELf,r,c)>0 and ELpspin(ELpd)) =
  ELusrfuelfrac*ELfuelburn(ELpd,v,ELf,r,c)*ELlchours(ELl,c)*
  ELdaysinseason(ELs,ELday)*ELupspincap.l(ELpd,v,ELl,ELs,ELday,ELf,trun,r,c);
 
-report9(trun,ELs,ELday,ELl,r,c,ELpd)$rc(r,c)=
+report09(trun,ELs,ELday,ELl,r,c,ELpd)$rc(r,c)=
   sum((v,ELf)$(Elfuelburn(ELpd,v,ELf,r,c)>0 and ELpcom(ELpd)),
          ELop.l(ELpd,v,ELl,ELs,ELday,ELf,trun,r,c));
 
-report9(trun,ELs,ELday,ELl,r,c,ELps)$rc(r,c)=
+report09(trun,ELs,ELday,ELl,r,c,ELps)$rc(r,c)=
   sum(v,ELsolop.l(ELps,v,ELl,ELs,ELday,trun,r,c));
 
-report9(trun,ELs,ELday,ELl,r,c,WApf)$rc(r,c)=
+report09(trun,ELs,ELday,ELl,r,c,WApf)$rc(r,c)=
   sum((v,WAf)$(WAfuelburn(WApf,v,WAf,r,c)>0),
          WAFop.l(WApF,v,WAf,trun,r,c)*(1-WAyield(WApF,v,r,c)*WAelrate(WApF,v))*ELnormhours(ELl,ELs,ELday,c));
 
-report9(trun,ELs,ELday,ELl,r,c,WApV)$rc(r,c)=
+report09(trun,ELs,ELday,ELl,r,c,WApV)$rc(r,c)=
   sum((v,WAf,opm)$(WAVfuelburn(WApV,v,WAf,opm,r,c)>0),
          WAVop.l(WApV,v,ELl,ELs,ELday,WAf,opm,trun,r,c)*(1-WAVyield(WApV,v,opm,r,c)*WAelrate(WApV,v)));
 
 
-*report9(trun,ELs,ELday,ELl,r,c,'waelsupply')$rc(r,c)=
+*report09(trun,ELs,ELday,ELl,r,c,'waelsupply')$rc(r,c)=
 * WAELsupply.l(ELl,ELs,ELday,trun,r,c);
 
-*report9(trun,ELs,ELday,ELl,r,c,'el trans')$rc(r,c)=
+*report09(trun,ELs,ELday,ELl,r,c,'el trans')$rc(r,c)=
 * sum((rr,cc)$rc(rr,cc),ELtrans.l(ELl,ELs,ELday,trun,r,c,rr,cc));
 
-*report9(trun,ELs,ELday,ELl,r,c,'watrans')$rc(r,c)=
+*report09(trun,ELs,ELday,ELl,r,c,'watrans')$rc(r,c)=
 *  sum((rr,cc)$rc(rr,cc),WAtrans.l(ELl,ELs,ELday,trun,r,c,rr,cc));
 
 report10(trun,ELs,ELday,ELl,r,c,WApF)$rc(r,c)=
@@ -122,7 +122,7 @@ report21(trun,r,c,ELs,ELday,ELl)$rc(r,c)=
   sum((WAp),report10(trun,ELs,ELday,ELl,r,c,WAp))
  -sum((rr,cc)$rc(rr,cc),WAtrans.l(ELl,ELs,ELday,trun,r,c,rr,cc))
 
-* -report9(trun,ELs,ELday,ELl,r,c,'watrans')
+* -report09(trun,ELs,ELday,ELl,r,c,'watrans')
 ;
 
 report22(trun,r,c,ELs,ELday,ELl)$rc(r,c)=
@@ -140,26 +140,26 @@ report23(trun,c,r,ELs,ELday)$rc(r,c)=
 ;
 
 report24(trun,ELs,ELday,ELl,r,c)$rc(r,c)=
-  sum(ELpd,report9(trun,ELs,ELday,ELl,r,c,ELpd))
- +sum(ELps,report9(trun,ELs,ELday,ELl,r,c,ELps))
- +sum(WApF,report9(trun,ELs,ELday,ELl,r,c,WApf))
- +sum(WApV,report9(trun,ELs,ELday,ELl,r,c,WApV))
+  sum(ELpd,report09(trun,ELs,ELday,ELl,r,c,ELpd))
+ +sum(ELps,report09(trun,ELs,ELday,ELl,r,c,ELps))
+ +sum(WApF,report09(trun,ELs,ELday,ELl,r,c,WApf))
+ +sum(WApV,report09(trun,ELs,ELday,ELl,r,c,WApV))
  -report15(trun,r,c,ELs,ELday,ELl)
 ;
 
 report25(trun,ELs,ELday,ELl,r,c,'thermal')$rc(r,c)=
-( sum(ELpd,report9(trun,ELs,ELday,ELl,r,c,ELpd))
+( sum(ELpd,report09(trun,ELs,ELday,ELl,r,c,ELpd))
 )/
  (ELlchours(ELl,c)*ELdaysinseason(ELs,ELday));
 
 report25(trun,ELs,ELday,ELl,r,c,'cogen')$rc(r,c)=
-( sum(WApF,report9(trun,ELs,ELday,ELl,r,c,WApf))
- +sum(WApV,report9(trun,ELs,ELday,ELl,r,c,WApV))
+( sum(WApF,report09(trun,ELs,ELday,ELl,r,c,WApf))
+ +sum(WApV,report09(trun,ELs,ELday,ELl,r,c,WApV))
 )/
  (ELlchours(ELl,c)*ELdaysinseason(ELs,ELday));
 
 report25(trun,ELs,ELday,ELl,r,c,'PV')$rc(r,c)=
-  report9(trun,ELs,ELday,ELl,r,c,'PV')/
+  report09(trun,ELs,ELday,ELl,r,c,'PV')/
  (ELlchours(ELl,c)*ELdaysinseason(ELs,ELday));
 
 report26(trun,ELs,ELday,ELl,r,c)$rc(r,c)=
@@ -181,19 +181,19 @@ report28(trun)=
 
 report_xls(trun,ELs,ELday,ELl,r,c,'DELsup')$rc(r,c)=report26(trun,ELs,ELday,ELl,r,c);
 
-report_xls(trun,ELs,ELday,ELl,r,c,'GT Twh')$rc(r,c)=report9(trun,ELs,ELday,ELl,r,c,'GT');
+report_xls(trun,ELs,ELday,ELl,r,c,'GT Twh')$rc(r,c)=report09(trun,ELs,ELday,ELl,r,c,'GT');
 
-report_xls(trun,ELs,ELday,ELl,r,c,'CC TWh')$rc(r,c)=report9(trun,ELs,ELday,ELl,r,c,'CC');
+report_xls(trun,ELs,ELday,ELl,r,c,'CC TWh')$rc(r,c)=report09(trun,ELs,ELday,ELl,r,c,'CC');
 
-report_xls(trun,ELs,ELday,ELl,r,c,'PV TWh')$rc(r,c)=report9(trun,ELs,ELday,ELl,r,c,'PV');
+report_xls(trun,ELs,ELday,ELl,r,c,'PV TWh')$rc(r,c)=report09(trun,ELs,ELday,ELl,r,c,'PV');
 
-report_xls(trun,ELs,ELday,ELl,r,c,'GTco TWh')$rc(r,c)=report9(trun,ELs,ELday,ELl,r,c,'GTco');
+report_xls(trun,ELs,ELday,ELl,r,c,'GTco TWh')$rc(r,c)=report09(trun,ELs,ELday,ELl,r,c,'GTco');
 
-report_xls(trun,ELs,ELday,ELl,r,c,'CCco TWh')$rc(r,c)=report9(trun,ELs,ELday,ELl,r,c,'CCCoMSF');
+report_xls(trun,ELs,ELday,ELl,r,c,'CCco TWh')$rc(r,c)=report09(trun,ELs,ELday,ELl,r,c,'CCCoMSF');
 
-report_xls(trun,ELs,ELday,ELl,r,c,'GTcoV TWh')$rc(r,c)=report9(trun,ELs,ELday,ELl,r,c,'GTcoV');
+report_xls(trun,ELs,ELday,ELl,r,c,'GTcoV TWh')$rc(r,c)=report09(trun,ELs,ELday,ELl,r,c,'GTcoV');
 
-report_xls(trun,ELs,ELday,ELl,r,c,'CCcoV TWh')$rc(r,c)=report9(trun,ELs,ELday,ELl,r,c,'CCcoVMSF');
+report_xls(trun,ELs,ELday,ELl,r,c,'CCcoV TWh')$rc(r,c)=report09(trun,ELs,ELday,ELl,r,c,'CCcoVMSF');
 
 report_xls(trun,ELs,ELday,ELl,r,c,'WAELsupply')$rc(r,c)=report17(trun,r,c,ELs,ELday,ELl);
 
@@ -243,9 +243,9 @@ report_xls(trun,ELs,ELday,ELl,r,c,'excess water')$rc(r,c)=
  -report12(trun,c,r,ELs,ELday,ELl);
 
 * for checking ELsup.m
-option report6:2:0:1;
-option report7:2:0:1;
-option report9:5:5:1;
+option report06:2:0:1;
+option report07:2:0:1;
+option report09:5:5:1;
 option report10:5:5:1;
 option report11:5:6:1;
 option report12:6:0:1;
@@ -267,9 +267,9 @@ option report28:5:0:1;
 option report_xls:8:6:1;
 
 display
-report6
-report7
-report9
+report06
+report07
+report09
 report10
 report11
 report12

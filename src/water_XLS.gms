@@ -604,16 +604,16 @@ WAfuelburn(WApnoBWRO,v,WAf,"cent",'ksa') = 0;
 
 
 * variable fixes and bounds
-WAexistcp.fx(WAp,v,'t1',r,c)$rc(r,c)= WAexist(WAp,v,r,c);
-WAtransexistcp.fx('t1',r,c,rr,cc)$(rc(r,c) and rc(rr,cc))= WAtransexist(r,c,rr,cc);
+WAexistcp.fx(WAp,v,'t01',r,c)$rc(r,c)= WAexist(WAp,v,r,c);
+WAtransexistcp.fx('t01',r,c,rr,cc)$(rc(r,c) and rc(rr,cc))= WAtransexist(r,c,rr,cc);
 WAgr.fx(WAf,trun,r,c)$rc(r,c)=0;
-WAstoexistcp.fx('t1',r,c)$rc(r,c) = WAstoexist(r,c);
+WAstoexistcp.fx('t01',r,c)$rc(r,c) = WAstoexist(r,c);
 WAsolop.up(WAprn,v,ELl,ELs,ELday,trun,r,c)$rc(r,c)=0;
 WAbld.up('BWRO','new',trun,r,c)=0;
 *WAstoop.up(ELl,ELs,ELday,trun,rr,cc)=0;
 
-*WAfconsump.up('HFO',trun,r,c)=WAfconsumpmax('HFO','t1',r,c);
-*WAfconsump.up('diesel',trun,r,c)=WAfconsumpmax('diesel','t1',r,c);
+*WAfconsump.up('HFO',trun,r,c)=WAfconsumpmax('HFO','t01',r,c);
+*WAfconsump.up('diesel',trun,r,c)=WAfconsumpmax('diesel','t01',r,c);
 
 Equations
 

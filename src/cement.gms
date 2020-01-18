@@ -74,20 +74,20 @@ CMfeedcst('Pozzn',time,r,'ksa')=75/3.75;
 Table CMAPf(f,time,r,c) administered price for fuels
                  (east,cent,west,sout).ksa     (adwe,dewa,sewa,fewa).uae  qatr.qat  kuwr.kuw bahr.bah omnr.omn
 *Units in million USD per trillion BTU
-Methane.t1       0.75                          99                         99        99       99       99
+Methane.t01       0.75                          99                         99        99       99       99
 *Units in million USD per million barrels (oil price from Al-Rajhi (2012) p.10)
-Arabheavy.t1     6                             99                         99        99       99       99
+Arabheavy.t01     6                             99                         99        99       99       99
 *Units in million USD per million tons
-HFO.t1           14.05                         99                         99        99       99       99
+HFO.t01           14.05                         99                         99        99       99       99
 *Units in million USD per million tons
-Diesel.t1        26.66                         99                         99        99       99       99
+Diesel.t01        26.66                         99                         99        99       99       99
 
 * Calibrated to 2011 based on Al-Nagadi (2007) and CSDI production/exports/imports.
 Table CMdemval(CMcf,time,rr,cc) cement demand in millions of metric tons
            west.ksa      sout.ksa        cent.ksa        east.ksa    (adwe,dewa,sewa,fewa).uae  qatr.qat  kuwr.kuw bahr.bah omnr.omn
-PortI.t1   11.53         6.17            13.17           10.29       0.0                        0.0       0.0      0.0      0.0
-PortV.t1   3.16          1.69            3.61            2.82        0.0                        0.0       0.0      0.0      0.0
-PozzC.t1   1.11          0.59            1.26            0.99        0.0                        0.0       0.0      0.0      0.0
+PortI.t01   11.53         6.17            13.17           10.29       0.0                        0.0       0.0      0.0      0.0
+PortV.t01   3.16          1.69            3.61            2.82        0.0                        0.0       0.0      0.0      0.0
+PozzC.t01   1.11          0.59            1.26            0.99        0.0                        0.0       0.0      0.0      0.0
 ;
 Loop(time,CMdemval(CMcf,time+1,rr,cc)$rc(rr,cc)=CMdemval(CMcf,time,rr,cc)*1.03);
 ;
@@ -108,10 +108,10 @@ CMfconsumpmax('Methane',time,'east','ksa')=36.451;
 $offtext
 Table CMfconsumpmax(CMf,time,r,c) fuel supply limit
                  west.ksa      sout.ksa        cent.ksa        east.ksa    (adwe,dewa,sewa,fewa).uae  qatr.qat  kuwr.kuw bahr.bah omnr.omn
-Methane.t1       0             0               38.008          36.451      1                          1         1        1        1
-HFO.t1           1.953         0.925           0.695           0.465       1                          1         1        1        1
-Arabheavy.t1     0             0.584           3.358           5.694       1                          1         1        1        1
-Diesel.t1        0             0               0               0           1                          1         1        1        1
+Methane.t01       0             0               38.008          36.451      1                          1         1        1        1
+HFO.t01           1.953         0.925           0.695           0.465       1                          1         1        1        1
+Arabheavy.t01     0             0.584           3.358           5.694       1                          1         1        1        1
+Diesel.t01        0             0               0               0           1                          1         1        1        1
 ;
 
 CMfconsumpmax('Methane',time,r,c)$rc(r,c)=CMfconsumpmax('Methane',time,r,c)*3066/2951.755;
@@ -507,24 +507,24 @@ table CMtranscst(r,c,rr,cc)
          east.ksa        5               6               2               1           1                          1         1        1        1
 ;
 
-CMexistcp.fx(CMu,'t1',r,c)$rc(r,c)=CMexist(CMu,r,c);
-CMELexistcp.fx('t1',r,c)$rc(r,c)=CMELexist(r,c);
-CMstorexistcp.fx('t1',r,c)$rc(r,c)=CMstorexist(r,c);
-CMkupgradetot.fx('t1',r,c)$rc(r,c)=1*CMexist('Kiln',r,c);
-CMstorage.fx(CMcements,'t1',r,c)$rc(r,c)=CMstorexist(r,c);
+CMexistcp.fx(CMu,'t01',r,c)$rc(r,c)=CMexist(CMu,r,c);
+CMELexistcp.fx('t01',r,c)$rc(r,c)=CMELexist(r,c);
+CMstorexistcp.fx('t01',r,c)$rc(r,c)=CMstorexist(r,c);
+CMkupgradetot.fx('t01',r,c)$rc(r,c)=1*CMexist('Kiln',r,c);
+CMstorage.fx(CMcements,'t01',r,c)$rc(r,c)=CMstorexist(r,c);
 
 *Exports in 2011 are calibrated to CDSI export statistics:
 *SP - Currently these values represent KSA. Need to update with GCC aggregate
-CMnatexports.up(CMcf,'t1')=0;
-CMnatexports.up('PortI','t1')=0.177;
-CMnatexports.up('PortV','t1')=0.208;
-CMnatexports.up('PozzC','t1')=0.097;
+CMnatexports.up(CMcf,'t01')=0;
+CMnatexports.up('PortI','t01')=0.177;
+CMnatexports.up('PortV','t01')=0.208;
+CMnatexports.up('PozzC','t01')=0.097;
 *To be in line with current policy that exports are banned, the following is imposed:
 *CMnatexports.fx(CMcf,time)$(ord(time)>1)=0;
 
 *Cement companies may not be able to anticipate fuel shortages or production outages;
 *therefore, a lower bound may be imposed on storage to hedge against that risk:
-*CMstorage.lo(CMcements,'t1',r)=0.025;
+*CMstorage.lo(CMcements,'t01',r)=0.025;
 ;
 Equations
 CMobjective            Cement objective function

@@ -33,7 +33,7 @@ display call;
 display rc;
 
 * name the scenario
-$setglobal scenario gcclong
+$setglobal scenario F
 
 scalars
 savedrun load saved run: 1 /0/
@@ -99,22 +99,17 @@ $INCLUDE src/create_models.gms
 *$INCLUDE src/scenarios/solve_singleperiod.gms
 
 parameter methane_add(time);
-* to run multi-period include these two:
+
+* == multi-period scenarios
 $INCLUDE src/projections.gms
-*$INCLUDE solve_multi.gms
-
-* == climate policies
-*$INCLUDE src/scenarios/solve_climate_reference.gms
-*$INCLUDE src/scenarios/solve_climate_deregulation.gms
-*$INCLUDE src/scenarios/solve_climate_deregulation.gms
-*$INCLUDE src/scenarios/solve_climate_gradual_half.gms
-*$INCLUDE src/scenarios/solve_climate_RPS.gms
-*$INCLUDE src/scenarios/solve_climate_CES.gms
-$INCLUDE src/scenarios/solve_GCC_multiperiod.gms
-
-*$INCLUDE solve_climate_gradual.gms
-
-*$INCLUDE solve_climate_capsub.gms
+*$INCLUDE src/scenarios/solve_GCC_multiperiod_A.gms
+*$INCLUDE src/scenarios/solve_GCC_multiperiod_B.gms
+*$INCLUDE src/scenarios/solve_GCC_multiperiod_C.gms
+*$INCLUDE src/scenarios/solve_GCC_multiperiod_D.gms
+*$INCLUDE src/scenarios/solve_GCC_multiperiod_E.gms
+$INCLUDE src/scenarios/solve_GCC_multiperiod_F.gms
+*$INCLUDE src/scenarios/solve_GCC_multiperiod_G.gms
+*$INCLUDE src/scenarios/solve_GCC_multiperiod_H.gms
 
 $INCLUDE src/report_excel.gms
 * write to CSV:

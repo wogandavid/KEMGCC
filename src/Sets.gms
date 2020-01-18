@@ -3,11 +3,11 @@
 
 
 * General and time sets
-* t1 = 2015
+* t01 = 2015
 Sets
-time            time period for defining parameters and tables   /t1*t30/
-trun(time)      final model run time period                      /t1*t16/
-time2(trun)     myopic horizon for hybrid recursive dynamics     /t1*t1/
+time            time period for defining parameters and tables   /t01*t30/
+trun(time)      final model run time period                      /t01*t16/
+time2(trun)     myopic horizon for hybrid recursive dynamics     /t01*t01/
 i               time summation index for discounting             /1*100/
 t(trun)         dynamic set for time ;
 
@@ -238,7 +238,7 @@ ELLnotfirst(ELl)        all hourly load segements but the first
 
 WApGTCo(WApV)    GTCoV  only                    /GTCOV/
 WApnoBWRO(WAp)  all but BWRO
-*SP: I have added the regions below. Check if these are right!
+
 rsea(r,c)  regions with direct sea access /(west,sout,east).ksa,(adwe,dewa,sewa,fewa).uae,qatr.qat,kuwr.kuw,bahr.bah,omnr.omn/
 opm variable cogen operation modes /m0,m1/
 ;
@@ -291,13 +291,6 @@ ELpdsub(Elpd) = no;
 ELprsub(Elps) = no;
 ELpsub(ELp) = no;
 WApsub(WAp) = no;
-
-
-
-
-
-
-
 
 
 

@@ -154,10 +154,10 @@ omnr.omn    0          0          0          0.9
 TRcapital(time,r,c,rr,cc)=3.00*1e0;
 TRcapital(time,rr,cc,r,c)=TRcapital(time,r,c,rr,cc);
 
-TRfixedomcst(r,c,rr,cc)=0.015*TRcapital('t1',r,c,rr,cc);
+TRfixedomcst(r,c,rr,cc)=0.015*TRcapital('t01',r,c,rr,cc);
 TRfixedomcst(rr,cc,r,c)=TRfixedomcst(r,c,rr,cc);
 
-TRomcst(r,c,rr,cc)=0.005*TRcapital('t1',r,c,rr,cc);
+TRomcst(r,c,rr,cc)=0.005*TRcapital('t01',r,c,rr,cc);
 TRomcst(rr,cc,r,c)=TRomcst(r,c,rr,cc);
 
 parameter TReleccst(ELl,ELs,ELday,time,r,c) adminstered electricity price in USD per MWh;
@@ -169,8 +169,8 @@ TReleccst(ELl,ELs,ELday,time,r,c)$rBAH(r,c)=20;
 TReleccst(ELl,ELs,ELday,time,r,c)$rOMN(r,c)=20;
 
 * set existing capacity
-TRexistcp.fx(r,c,rr,cc,'t1')=TRexist(r,c,rr,cc);
-TRexistcp.fx(r,c,rr,cc,'t1')=TRexist(r,c,rr,cc);
+TRexistcp.fx(r,c,rr,cc,'t01')=TRexist(r,c,rr,cc);
+TRexistcp.fx(r,c,rr,cc,'t01')=TRexist(r,c,rr,cc);
 ;
 
 TRpangle.up(ELl,ELs,ELday,r,c,trun)=0.6;

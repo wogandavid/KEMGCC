@@ -37,27 +37,28 @@ WAlc(ELl,ELs,ELday,c)= ELlcnorm(ELl,c)*ELnormdays(ELs,ELday);
 * Maximum fuel allocated to water producers
 Table WAfconsumpmax(WAf,time,r,c) fuel supply constraint in MMBBL MMTonne  trillion BTU
                 west.ksa        sout.ksa        cent.ksa        east.ksa
-Arablight.t1    9e9             9e9             9e9             9e9
-methane.t1      10.089                                          340.277
-diesel.t1       0.198           0.002                           0.00183
-HFO.t1          2.842           0.092                           0.0715
+Arablight.t01    200             0              0               200
+methane.t01      10.089                                          340.277
+diesel.t01       0.198           0.002                           0.00183
+*HFO.t01          3.0             0.50                            0.10
+HFO.t01          2.842           0.092                           0.0715
 
 +               adwe.uae        dewa.uae        sewa.uae        fewa.uae
-Arablight.t1    0               0               0               0
-methane.t1      9e9             9e9             9e9             9e9
-diesel.t1       0               0               0               0
-HFO.t1          0               0               0               0
+Arablight.t01    0               0               0               0
+methane.t01      9e9             9e9             9e9             9e9
+diesel.t01       0               0               0               0
+HFO.t01          0               0               0               0
 
 +               qatr.qat        kuwr.kuw        bahr.bah        omnr.omn
-Arablight.t1    0               5               0                0
-methane.t1      9e9             400             9e9              9e9
-*methane.t1      9e9             .05             9e9              9e9
-*diesel.t1       0               0               9e9              0
-diesel.t1       0               2               9e9              0
-HFO.t1          0               4               0                0
+Arablight.t01    0               5               0                0
+methane.t01      9e9             400             9e9              9e9
+*methane.t01      9e9             0.05             9e9              9e9
+*diesel.t01       0               0               9e9              0
+diesel.t01       0               2               9e9              0
+HFO.t01          0               4               0                0
 ;
 
-*WAfconsumpmax('methane','t1',r,c)=WAfconsumpmax('methane','t1',r,c)*3066/2689.685;
+*WAfconsumpmax('methane','t01',r,c)=WAfconsumpmax('methane','t01',r,c)*3066/2689.685;
 
 Parameter
 WAAPf(f,time,r,c)   administered price of fuel for water sector;
@@ -86,17 +87,17 @@ WAAPel(time,r,'omn') = 0.05/3.75*1e3;
 
 table WAdemval(time,r,c) water demand in billions m3
          west.ksa        sout.ksa        cent.ksa        east.ksa
-*t1       0.831           0.093           0.339           0.332
-*t1       0.7             0.0             0.4             0.3
-*t1       0.580                                            0.711
-t1       1.065                                           0.983
+*t01       0.831           0.093           0.339           0.332
+*t01       0.7             0.0             0.4             0.3
+*t01       0.580                                            0.711
+t01       1.065                                           0.983
 
 +        adwe.uae        dewa.uae        sewa.uae        fewa.uae
-t1       0.96            0.39            0.12            0.10
+t01       0.96            0.39            0.12            0.10
 
 +        qatr.qat        kuwr.kuw        bahr.bah        omnr.omn
-t1       0.493           0.6824          0.150           0.222
-*t1       0               0.50351         0.1744          0.222
+t01       0.493           0.6824          0.150           0.222
+*t01       0               0.50351         0.1744          0.222
 ;
 
 parameter WAgrdem(time,rr,cc) ground water demand bcm;
@@ -105,14 +106,14 @@ WAgrdem(time,rr,cc)=0;
 $ontext
 table WAgrdem(time,rr,cc) ground water demand billions m3
          west.ksa        sout.ksa        cent.ksa        east.ksa
-*t1       0.080           0.028           0.545           0.295
-t1       0               0               0               0
+*t01       0.080           0.028           0.545           0.295
+t01       0               0               0               0
 
 +        adwe.uae        dewa.uae        sewa.uae        fewa.uae
-t1       0.001           0.001           0.001           0.001
+t01       0.001           0.001           0.001           0.001
 
 +        qatr.qat        kuwr.kuw        bahr.bah        omnr.omn
-t1       0               0.533           0.001           0.001
+t01       0               0.533           0.001           0.001
 ;
 $offtext
 
@@ -408,6 +409,12 @@ PVhybWA         2500
 /;
 
 WAcapital(STCo) = 2130;
+* don't build the other RO types:
+WAcapital('BWRO') = 9e9;
+WAcapital('PVhybWA') = 9e9;
+WAcapital('SWROhyb') = 9e9;
+WAcapital('SWROfl') = 9e9;
+WAcapital('SWRO') = 1000;
 
 * the new estimates below align with IWPP project estimates for cogen plants
 WAcapital(GTCo) =  1485;
@@ -784,16 +791,16 @@ WAfuelburn(WApnoBWRO,v,WAf,"cent",'ksa') = 0;
 
 
 * variable fixes and bounds
-WAexistcp.fx(WAp,v,'t1',r,c)$rc(r,c)= WAexist(WAp,v,r,c);
-WAtransexistcp.fx('t1',r,c,rr,cc)$(rc(r,c) and rc(rr,cc))= WAtransexist(r,c,rr,cc);
+WAexistcp.fx(WAp,v,'t01',r,c)$rc(r,c)= WAexist(WAp,v,r,c);
+WAtransexistcp.fx('t01',r,c,rr,cc)$(rc(r,c) and rc(rr,cc))= WAtransexist(r,c,rr,cc);
 WAgr.fx(WAf,trun,r,c)$rc(r,c)=0;
-WAstoexistcp.fx('t1',r,c)$rc(r,c) = WAstoexist(r,c);
+WAstoexistcp.fx('t01',r,c)$rc(r,c) = WAstoexist(r,c);
 WAsolop.up(WAprn,v,ELl,ELs,ELday,trun,r,c)$rc(r,c)=0;
 WAbld.up('BWRO','new',trun,r,c)=0;
 *WAstoop.up(ELl,ELs,ELday,trun,rr,cc)=0;
 
-*WAfconsump.up('HFO',trun,r,c)=WAfconsumpmax('HFO','t1',r,c);
-*WAfconsump.up('diesel',trun,r,c)=WAfconsumpmax('diesel','t1',r,c);
+*WAfconsump.up('HFO',trun,r,c)=WAfconsumpmax('HFO','t01',r,c);
+*WAfconsump.up('diesel',trun,r,c)=WAfconsumpmax('diesel','t01',r,c);
 
 Equations
 

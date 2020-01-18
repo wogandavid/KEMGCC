@@ -144,20 +144,20 @@ ELcapital('Wind',time,r,c)=      2020;
 *$offtext
 
 $ontext
-         ELcapital('Steam','t1',r,c)=1584;
-         ELcapital('Steam','t1','east','ksa')=1680;
-         ELcapital('Stscrub','t1',r,c)=2026;
-         ELcapital('Stscrub','t1','east','ksa')=2122;
-         ELcapital('GT','t1',r,c)=1069;
-         ELcapital('GT','t1','cent','ksa')=1176.5;
-         ELcapital('CC','t1',r,c)=943;
-         ELcapital('CC','t1','cent','ksa')=1102;
-         ELcapital('GTtoCC','t1',r,c)=240;
-         ELcapital('PV','t1',r,c)=1436;
-         ELcapital('CSP','t1',r,c)=7448;
-         ELcapital('Wind','t1',r,c)=1804;
-         ELcapital('Nuclear','t1',r,c)=6500;
-         ELcapital('CoalSteam','t1',r,c)=2934;
+         ELcapital('Steam','t01',r,c)=1584;
+         ELcapital('Steam','t01','east','ksa')=1680;
+         ELcapital('Stscrub','t01',r,c)=2026;
+         ELcapital('Stscrub','t01','east','ksa')=2122;
+         ELcapital('GT','t01',r,c)=1069;
+         ELcapital('GT','t01','cent','ksa')=1176.5;
+         ELcapital('CC','t01',r,c)=943;
+         ELcapital('CC','t01','cent','ksa')=1102;
+         ELcapital('GTtoCC','t01',r,c)=240;
+         ELcapital('PV','t01',r,c)=1436;
+         ELcapital('CSP','t01',r,c)=7448;
+         ELcapital('Wind','t01',r,c)=1804;
+         ELcapital('Nuclear','t01',r,c)=6500;
+         ELcapital('CoalSteam','t01',r,c)=2934;
 $offtext
 
 Parameter
@@ -1104,13 +1104,13 @@ ELretirement(ELp,v,time,r,c)=0;
 ELaddition(ELp,v,time,r,c)=0;
 
 * set existing capacities
-ELexistcp.fx(ELpd,v,'t1',r,c)=ELexist(ELpd,v,r,c);
-ELrenexistcp.fx(ELpsw,v,'t1',r,c)=ELexist(ELpsw,v,r,c);
+ELexistcp.fx(ELpd,v,'t01',r,c)=ELexist(ELpd,v,r,c);
+ELrenexistcp.fx(ELpsw,v,'t01',r,c)=ELexist(ELpsw,v,r,c);
 ELbld.fx('CCcon','new',trun,r,c)=0;
-ELgttocc.fx('GTtoCC','old','t1',r,c)=0.10*ELexist('GT','old',r,c);
+ELgttocc.fx('GTtoCC','old','t01',r,c)=0.10*ELexist('GT','old',r,c);
 
-*ELfconsump.up(ELpd,'HFO',trun,r,c)= ELfconsumpmax('HFO','t1',r,c);
-*ELfconsump.up(ELpd,'diesel',trun,r,c)= ELfconsumpmax('diesel','t1',r,c);
+*ELfconsump.up(ELpd,'HFO',trun,r,c)= ELfconsumpmax('HFO','t01',r,c);
+*ELfconsump.up(ELpd,'diesel',trun,r,c)= ELfconsumpmax('diesel','t01',r,c);
 
 
 Equations

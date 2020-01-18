@@ -2,18 +2,17 @@
 * ==============
 
 * technology builds
-ELWAbld_reg(trun,ELpd,c,'EL')=0;
-ELWAbld_reg(trun,WApCO,c,'WA')=0;
+*ELWAbld_reg(trun,ELpd,c,'EL')=0;
+*ELWAbld_reg(trun,WApCO,c,'WA')=0;
 
-ELWAbld_reg(trun,ELpd,c,'EL')= sum((v,r), ELbld.l(ELpd,v,trun,r,c)$rc(r,c) );
-ELWAbld_reg(trun,ELpsw,c,'EL')= sum((v,r), ELrenbld.l(ELpsw,v,trun,r,c)$rc(r,c) );
-ELWAbld_reg(trun,WApCO,c,'WA')= sum((v,r), WAbld.l(WApCO,v,trun,r,c)$rc(r,c) );
+ELWAbld_reg(trun,ELpd,c,'EL')= sum((v,r)$rc(r,c), ELbld.l(ELpd,v,trun,r,c) + ELaddition(ELpd,v,trun,r,c)$rc(r,c));
+ELWAbld_reg(trun,ELpsw,c,'EL')= sum((v,r)$rc(r,c), ELrenbld.l(ELpsw,v,trun,r,c) + ELaddition(ELpsw,v,trun,r,c)$rc(r,c));
+ELWAbld_reg(trun,WApCO,c,'WA')= sum((v,r)$rc(r,c), WAbld.l(WApCO,v,trun,r,c) + WAaddition(WApCO,v,trun,r,c)$rc(r,c));
 
 ELWAbld_xls(c,trun,ELp)=ELWAbld_reg(trun,ELp,c,'EL');
-ELWAbld_xls(c,trun,WApCo)=ELWAbld_reg(trun,WApCO,c,'WA');
+*ELWAbld_xls(c,trun,WApCo)=ELWAbld_reg(trun,WApCO,c,'WA');
 
 ELWAbld_xls(c,trun,'Cogen') = sum(WApCo,ELWAbld_xls(c,trun,WApCo));
-
 
 * electricity production from power (total)
 ELWAsupELp(trun,r,c)$rc(r,c)=0;
@@ -140,14 +139,14 @@ ELWAcap(trun,c,ELpsw,'EL') =
   +ELrenexistcp.l(ELpsw,v,trun,r,c)$rc(r,c));
 
 * thermal cogeneration (GW)
-ELWAcap(trun,c,WApCO,'WA')=
+ELWAcap_cogen(trun,c,WapCO,'WA')=
   sum((v,r)$rc(r,c), WAbld.l(WApCO,v,trun,r,c)
  +WAexistcp.l(WApCo,v,trun,r,c)
  +WAaddition(WApCo,v,trun,r,c)
  -WAretirement(WApCo,v,trun,r,c) );
 
 * combine all cogen plants
-ELWAcap(trun,c,'Cogen','WA') = sum(WApCO,ELWAcap(trun,c,WApCO,'WA'));
+ELWAcap(trun,c,'Cogen','WA') = sum(WapCO,ELWAcap_cogen(trun,c,WapCO,'WA'));
 
 * water only plants
 WAcapSingle(trun,c,WApSingle,'WA') =

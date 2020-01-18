@@ -53,17 +53,17 @@ fimportcst(time,'methane')=9.0;
 
 Table fuelsupmax(f,time,r,c,ss) maximum fuel supply in each region-country MMBBL Million Tonnes and Trillion BTU
                 east.ksa.ss1
-crude    . t1   3700
-methane  . t1   2941.46
+crude    . t01   3700
+methane  . t01   2941.46
 
 +               adwe.uae.ss1    dewa.uae.ss1    sewa.uae.ss1    fewa.uae.ss1
-crude    . t1   1068.575        18.25           0               0
-methane  . t1   2000.00         44.23           0               0
+crude    . t01   1068.575        18.25           0               0
+methane  . t01   2000.00         44.23           0               0
 
 +               qatr.qat.ss1    kuwr.kuw.ss1   bahr.bah.ss1      omnr.omn.ss1
-*crude    . t1   239.44         1149           73.56             358.065
-crude    . t1   239.44          603.651        73.56             358.065
-methane  . t1   6371.45         741.167        760.13            1000
+*crude    . t01   239.44         1149           73.56             358.065
+crude    . t01   239.44          603.651        73.56             358.065
+methane  . t01   6371.45         741.167        760.13            1000
 ;
 
 * Kuwait 1052.295 TBTU
@@ -73,12 +73,12 @@ methane  . t1   6371.45         741.167        760.13            1000
 * SEWA 59.22
 * FEWA 3.44
 
-*fuelsupmax('methane','t1','east','ksa','ss1')=7000;
-*fuelsupmax('methane','t1','kuwr','kuw','ss1')=1400;
-*fuelsupmax('methane','t1','bahr','bah','ss1')=150;
+*fuelsupmax('methane','t01','east','ksa','ss1')=7000;
+*fuelsupmax('methane','t01','kuwr','kuw','ss1')=1400;
+*fuelsupmax('methane','t01','bahr','bah','ss1')=150;
 
 table Fuelsplit(crude,c,time) proportion of grades
-                 ksa.t1    uae.t1   qat.t1   kuw.t1    bah.t1     omn.t1
+                 ksa.t01   uae.t01  qat.t01  kuw.t01   bah.t01    omn.t01
 Arablight        0.65      1.00     1.00     1.0       1.0        1.0
 Arabmed          0.25      0        0        0         0          0
 Arabheavy        0.10      0        0        0         0          0
@@ -87,7 +87,7 @@ Arabheavy        0.10      0        0        0         0          0
 *Fuelsplit(crude,c,time)=0;
 *Fuelsplit('arablight',c,time)=1;
 
-*Fuelsplit(crude,c,time)=Fuelsplit(crude,c,'t1');
+*Fuelsplit(crude,c,time)=Fuelsplit(crude,c,'t01');
 
 * define max fuel for individual crude grades
 fuelsupmax(crude,time,r,c,ss)=fuelsupmax('crude',time,r,c,ss)*fuelsplit(crude,c,time);
@@ -103,8 +103,8 @@ fuelsupmax(f,time,r,c,'ss2')=0;
 
 Parameter OTHERfconsump(fup,time,r,c);
 OTHERfconsump(fup,time,r,c)=0;
-OTHERfconsump('methane','t1','east','ksa')=1610;
-*OTHERfconsump('methane','t1','qatr','qat')=400;
+OTHERfconsump('methane','t01','east','ksa')=1610;
+*OTHERfconsump('methane','t01','qatr','qat')=400;
 OTHERfconsump('methane',time,'qatr','qat')=0;
 
 *OTHERfconsump('arablight',time,'kuwr','kuw')=336;
@@ -113,6 +113,9 @@ OTHERfconsump('methane',time,'qatr','qat')=0;
 OTHERfconsump('methane',time,'kuwr','kuw')=540;
 
 *OTHERfconsump('methane',time,'bahr','bah')=546-100;
+
+
+* TURN THIS BACK ON:
 OTHERfconsump('arablight',time,'bahr','bah')=98;
 
 OTHERfconsump('arablight',time,'adwe','uae')=176.17;
@@ -130,8 +133,6 @@ OTHERfconsump('methane',time,'fewa','uae')=0;
 
 OTHERfconsump('arablight',time,'omnr','omn')=70;
 OTHERfconsump('methane',time,'omnr','omn')=500;
-
-
 
 display OTHERfconsump;
 
@@ -253,8 +254,6 @@ ftransexist('methane','adwe','uae','omnr','omn')=100;
 
 
 display ftransexist;
-
-* DMW - need to add fuel pipeline capacities for UAE etc
 
 parameter ftransleadtime(fup,r,c,rr,cc) lead time for building tranmission;
 ftransleadtime(fup,r,c,rr,cc)=0;
@@ -427,20 +426,20 @@ ftransyield('u-235',r,c,rr,cc)$(rc(r,c) and rc(rr,cc) and sameas(c,cc) )=1;
 display ftransyield;
 
 parameter fintlprice(f,time) market price for fuels in USD per MMBTU or bbl or ton;
-fintlprice('arablight','t1')=55;
-fintlprice('arabmed','t1')=60;
-fintlprice('arabheavy','t1')=60;
+fintlprice('arablight','t01')=55;
+fintlprice('arabmed','t01')=60;
+fintlprice('arabheavy','t01')=60;
 
-fintlprice('Gcond','t1')=fintlprice('Arablight','t1')+4;
+fintlprice('Gcond','t01')=fintlprice('Arablight','t01')+4;
 fintlprice('propane',time)=851.4;
-*fintlprice('methane',time)=0.15*fintlprice('Arablight','t1');
+*fintlprice('methane',time)=0.15*fintlprice('Arablight','t01');
 * netback
 fintlprice('methane',time)=7.0;
 
 fintlprice('ethane',time)=9;
-fintlprice('NGL','t1')=657;
+fintlprice('NGL','t01')=657;
 fintlprice('u-235',time)=101.27;
-fintlprice('Coal','t1')=84.26;
+fintlprice('Coal','t01')=84.26;
 
 parameter RFintlprice(f,time) market price for refinied products;
 RFintlprice('diesel',time)=677.08;
@@ -452,7 +451,7 @@ flifetime(fup)=35;
 Parameter fdiscfact(time) discount factor for fuel fector;
 
 * set initial transmission capacity
-ftransexistcp.fx(fup,'t1',r,c,rr,cc)$(rc(r,c) and rc(rr,cc))=ftransexist(fup,r,c,rr,cc);
+ftransexistcp.fx(fup,'t01',r,c,rr,cc)$(rc(r,c) and rc(rr,cc))=ftransexist(fup,r,c,rr,cc);
 
 * in lieu of constraining fuel consumption directly:
 Fueluse.up(fup,ss,trun,r,c)$rc(r,c)=fuelsupmax(fup,trun,r,c,ss);

@@ -46,9 +46,9 @@ Parameter TRdiscoef1(rr,cc,r,c,trun) discounting coefficient;
 *        discounting for water transportation and storage equipment  for 35 year lifetime
 
          WApurcst(WAp,trun,r,c) = WApurcst(WAp,trun,r,c)*WAdiscoef1(WAp,trun);
-         WAtranspurcst(trun,r,c,rr,cc) = WAtranspurcst("t1",r,c,rr,cc)* WAdiscoef2(trun);
-         WAstopurcst(trun,rr,cc) = WAstopurcst("t1",rr,cc)* WAdiscoef2(trun);
-         WAstoconstcst(trun,rr,cc) = WAstoconstcst("t1",rr,cc)* WAdiscoef2(trun);
+         WAtranspurcst(trun,r,c,rr,cc) = WAtranspurcst("t01",r,c,rr,cc)* WAdiscoef2(trun);
+         WAstopurcst(trun,rr,cc) = WAstopurcst("t01",rr,cc)* WAdiscoef2(trun);
+         WAstoconstcst(trun,rr,cc) = WAstoconstcst("t01",rr,cc)* WAdiscoef2(trun);
 
 *+++++++ Discounting upstream fuel submodel
 
@@ -60,8 +60,8 @@ Parameter TRdiscoef1(rr,cc,r,c,trun) discounting coefficient;
 *intdiscfact(fdiscrate,trun,time2)/sumdiscfact(flifetime(fup),fdiscrate,i);
 *        discounting for transportation equipment  for 35 year lifetime
 
-         ftranspurcst(fup,trun,r,c,rr,cc)=ftranspurcst(fup,"t1",r,c,rr,cc)*fdiscoef(fup,trun);
-*         ftransconstcst(fup,trun,r,c,rr,cc)=ftransconstcst(fup,"t1",r,c,rr,cc)*fdiscoef(fup,trun);
+         ftranspurcst(fup,trun,r,c,rr,cc)=ftranspurcst(fup,"t01",r,c,rr,cc)*fdiscoef(fup,trun);
+*         ftransconstcst(fup,trun,r,c,rr,cc)=ftransconstcst(fup,"t01",r,c,rr,cc)*fdiscoef(fup,trun);
 
 $ontext
 *+++++++ Discounting petchem submodel
