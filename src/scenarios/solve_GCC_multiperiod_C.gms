@@ -520,6 +520,9 @@ ELfMPt(ELf,c)$fMPt(ELf,c)= yes;
 WAfMPt(WAf,c)$fMPt(WAf,c)= yes;
 
 tradecap=0;
+
+TRbld.fx(r,c,rr,cc,trun)$(ord(trun)>4 and (not sameas(c,cc)))=0;
+
 EMprice(ksec,EMcp,trun,c)$(ord(trun)>4)=0;
 
 ELAPf(ELf,ttrun,r,c) = fAP(ELf,ttrun,c);
@@ -535,7 +538,7 @@ display ELfMP,WAfMP,ELAPf,WAAPf,trun,ttrun,t;
 *$offtext
 
 *);
-$ontext
+
 if(ord(trun)=5,
         execute_loadpoint "integratedMCP_p5.gdx";
 elseif ord(trun)=6,
@@ -561,7 +564,7 @@ elseif ord(trun)=15,
 elseif ord(trun)=16,
         execute_loadpoint "integratedMCP_p16.gdx";
 );
-
+$ontext
 $offtext
 
 solve integratedMCP using MCP;

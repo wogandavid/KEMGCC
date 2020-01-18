@@ -527,6 +527,8 @@ WAAPf(WAf,ttrun,r,c) = fAP(WAf,ttrun,c);
 
 display ELfMP,WAfMP,ELAPf,WAAPf,trun,ttrun,t;
 
+TRbld.fx(r,c,rr,cc,trun)$(ord(trun)>4 and (not sameas(c,cc)))=0;
+
 *ELop_trade.fx(ELpd,v,ELl,ELs,ELday,ELf,ttrun,r,c)=0;
 *ELfconsump_trade.fx(ELpd,ELf,ttrun,r,c)=0;
 *WAFop_trade.fx(WApF,v,WAf,ttrun,r,c)=0;

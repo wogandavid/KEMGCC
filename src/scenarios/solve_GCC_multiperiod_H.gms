@@ -531,6 +531,9 @@ ELfMPt(ELf,c)$fMPt(ELf,c)= yes;
 WAfMPt(WAf,c)$fMPt(WAf,c)= yes;
 
 tradecap=0;
+
+TRbld.fx(r,c,rr,cc,trun)$(ord(trun)>4 and (not sameas(c,cc)))=0;
+
 EMprice(ksec,EMcp,trun,c)$(ord(trun)=5) = 5;
 EMprice(ksec,EMcp,trun,c)$(ord(trun)=6) = 10;
 EMprice(ksec,EMcp,trun,c)$(ord(trun)=7) = 15;
