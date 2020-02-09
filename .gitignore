@@ -4,13 +4,20 @@
 *.gdx
 *.lxi
 *.log
-/results/
+/results/*
 /climate/
 *.code-workspace
 225*
 .vscode*
 *.pf
 
+!results/builds.csv
+!results/capacity.csv
+!results/ELsup.csv
+!results/fuel_cons.csv
+!results/trade.csv
+!results/emissions.csv
+!results/investments.csv
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
