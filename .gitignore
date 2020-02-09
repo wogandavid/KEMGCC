@@ -11,6 +11,8 @@
 .vscode*
 *.pf
 
+tableau/*.twb
+
 !results/builds.csv
 !results/capacity.csv
 !results/ELsup.csv
