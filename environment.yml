@@ -8,6 +8,7 @@ channels:
 dependencies:
   - jupyterlab
   - matplotlib
+  - numpy=1.17
   - pandas
   - pyarrow
   - python
@@ -19,6 +20,5 @@ dependencies:
   - requests
   - bokeh
   - pyviz::panel
-  - nodejs
   - hvplot
   - jupyter-panel-proxy
