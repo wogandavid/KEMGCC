@@ -496,7 +496,7 @@ about_inv = """Cumulative investments by all countries.Add:
 - investments by technology
 """
 
-about_ex = """Exchange from one country to another per year."""
+#about_ex = """Exchange from one country to another per year."""
 
 desc_capacity = pn.layout.Row(pn.pane.Markdown(about_capacities))
 desc_fuel = pn.layout.Row(pn.pane.Markdown(about_fuel))
@@ -510,7 +510,7 @@ widgets_fuel = pn.WidgetBox('### Select your query',fuel.param)
 widgets_sup = pn.WidgetBox('### Select your query',sup.param)
 widgets_em1 = pn.WidgetBox('### Select your query',em1.param)
 widgets_em2 = pn.WidgetBox('### Select your query',em2.param)
-widgets_ex = pn.WidgetBox('### Select your query',ex.param)
+#widgets_ex = pn.WidgetBox('### Select your query',ex.param)
 
 dashboard = pn.Tabs(('Capacity',
     pn.Row(
@@ -589,18 +589,13 @@ class EXCHANGE(param.Parameterized):
         
 ex = EXCHANGE()
 
-
-# %%
 J = EXCHANGE()
 data = J.get_exchange_plot('H')
 data2 = J.get_cumulative('H')
 
-
-# %%
 data2
 
 
-# %%
 a = data.pivot_table(index='c',columns='cc',values='value')
 b = data.pivot_table(index='cc',columns='c',values='value')
 c = b-a
@@ -609,8 +604,6 @@ c = c.replace({np.nan:0})
 d = c.round(decimals=1)
 d
 
-
-# %%
 a = data.pivot_table(index='c',columns='cc',values='value')
 b = data.pivot_table(index='cc',columns='c',values='value')
 c = b-a
@@ -619,16 +612,8 @@ c = c.replace({np.nan:0})
 d = c.round(decimals=1)
 d
 
-
-# %%
-
-
-
-# %%
 np.array(data)
 
-
-# %%
 a = data.pivot_table(index='c',columns='cc',values='value')
 
 b = data.pivot_table(index='cc',columns='c',values='value')
@@ -640,24 +625,14 @@ c = c.replace({np.nan:0})
 d = c.round(decimals=1)
 d
 
-
-# %%
 e = d.reset_index()
 
-
-# %%
 f = e.melt(id_vars='cc')
 
-
-# %%
 g = f[f['value']>0]
 
-
-# %%
 np.array(g)
 
-
-# %%
 h = hv.Sankey([
     ['Bahrain' , 'Bahrain ', 20],
     ['Kuwait', 'Kuwait ', 30],
@@ -673,16 +648,11 @@ h = hv.Sankey([
 )
 h.opts(width=600, height=400)
 
-
-# %%
 sankey = hv.Sankey(np.array(g))
 
 
-# %%
 sankey.opts(width=600, height=400)
 
-
-# %%
 sankey = hv.Sankey([
     ['A', 'X', 0],
     ['A', 'X', 5],
@@ -694,17 +664,9 @@ sankey = hv.Sankey([
 )
 sankey.opts(width=600, height=400)
 
-
-# %%
 nodes = ["PhD", "Career Outside Science",  "Early Career Researcher", "Research Staff",
          "Permanent Research Staff",  "Professor",  "Non-Academic Research"]
 nodes = hv.Dataset(enumerate(nodes), 'index', 'label')
 
-
-# %%
 nodes.data
-
-
-# %%
-
 
