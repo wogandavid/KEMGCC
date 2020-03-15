@@ -579,8 +579,8 @@ class EXCHANGE(param.Parameterized):
         _df = df_trade.loc[mask]
         _df = _df.drop(['scenario'],axis=1)
         
-        a = data.pivot_table(index='c',columns='cc',values='value',aggfunc=np.sum)
-        b = data.pivot_table(index='cc',columns='c',values='value',aggfunc=np.sum)
+        a = _df.pivot_table(index='c',columns='cc',values='value',aggfunc=np.sum)
+        b = _df.pivot_table(index='cc',columns='c',values='value',aggfunc=np.sum)
         c = b-a
         c[c < 0] = 0
         c = c.replace({np.nan:0})       
@@ -590,48 +590,9 @@ class EXCHANGE(param.Parameterized):
 ex = EXCHANGE()
 
 J = EXCHANGE()
-data = J.get_exchange_plot('H')
-data2 = J.get_cumulative('H')
+data = J.get_cumulative('H')
 
-data2
-
-
-a = data.pivot_table(index='c',columns='cc',values='value')
-b = data.pivot_table(index='cc',columns='c',values='value')
-c = b-a
-c[c < 0] = 0
-c = c.replace({np.nan:0})       
-d = c.round(decimals=1)
-d
-
-a = data.pivot_table(index='c',columns='cc',values='value')
-b = data.pivot_table(index='cc',columns='c',values='value')
-c = b-a
-c[c < 0] = 0
-c = c.replace({np.nan:0})       
-d = c.round(decimals=1)
-d
-
-np.array(data)
-
-a = data.pivot_table(index='c',columns='cc',values='value')
-
-b = data.pivot_table(index='cc',columns='c',values='value')
-
-c = b-a
-c[c < 0] = 0
-c = c.replace({np.nan:0})
-
-d = c.round(decimals=1)
-d
-
-e = d.reset_index()
-
-f = e.melt(id_vars='cc')
-
-g = f[f['value']>0]
-
-np.array(g)
+sankey = hv.Sankey(np.array(f))
 
 h = hv.Sankey([
     ['Bahrain' , 'Bahrain ', 20],
