@@ -10,7 +10,7 @@ dependencies:
   - matplotlib
   - pandas
   - pyarrow
-  - python
+  - python=3.6
   - xlrd
   - plotly
   - ipywidgets
