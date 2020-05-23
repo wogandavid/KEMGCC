@@ -11,6 +11,8 @@
 .vscode*
 *.pf
 
+/gcc_env/
+
 tableau/*.twb
 
 !results/builds.csv
