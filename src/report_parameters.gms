@@ -3,6 +3,11 @@
 parameter
 obj_value(trun,c) objective value
 
+ELWAcap_reg
+ELWAcap_agg
+ELWAcap_tot
+ELWAcap_xls
+
 ELWAbld_xls build of power generation technology
 ELWAsupELp(trun,r,c) electricity production from power (total)
 ELWAsupWAp(trun,r,c) electricity production from water (total)

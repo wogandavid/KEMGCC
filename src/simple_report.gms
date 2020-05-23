@@ -155,6 +155,40 @@ WAcapSingle(trun,c,WApSingle,'WA') =
  +WAaddition(WApsingle,v,trun,r,c)
  -WAretirement(WApsingle,v,trun,r,c));
 
+********* capacity
+* power plants
+ELWAcap_reg(trun,ELpd,c,r,'EL')$rc(r,c) =
+         sum(v, sum(ELpp,ELcapadd(ELpp,ELpd)*ELbld.l(ELpp,v,trun,r,c)$rc(r,c))+
+                         ELexistcp.l(ELpd,v,trun,r,c)$rc(r,c)
+                         +ELaddition(ELpd,v,trun,r,c)
+                         -ELretirement(ELpd,v,trun,r,c));
+
+ELWAcap_reg(trun,ELpsw,c,r,'EL')$rc(r,c) =
+         sum(v, ELrenbld.l(ELpsw,v,trun,r,c)$rc(r,c)+
+                ELrenexistcp.l(ELpsw,v,trun,r,c)$rc(r,c)
+                +ELaddition(ELpsw,v,trun,r,c)
+                -ELretirement(ELpsw,v,trun,r,c));
+
+* thermal cogeneration (GW)
+ELWAcap_reg(trun,WApCO,c,r,'WA')$rc(r,c)= sum(v, WAbld.l(WApCO,v,trun,r,c)
+                                          +WAexistcp.l(WApCo,v,trun,r,c)
+                                          +WAaddition(WApCo,v,trun,r,c)
+                                          -WAretirement(WApCo,v,trun,r,c) );
+
+ELWAcap_agg(trun,ELp,c,'EL') = sum(r$rc(r,c), ELWAcap_reg(trun,ELp,c,r,'EL'));
+ELWAcap_agg(trun,WApCO,c,'WA')=sum(r$rc(r,c), ELWAcap_reg(trun,WApCO,c,r,'WA') );
+
+ELWAcap_tot(trun,c,'EL') = sum(ELp, ELWAcap_agg(trun,ELp,c,'EL'));
+ELWAcap_tot(trun,c,'WA') = sum(WApCO, ELWAcap_agg(trun,WApCO,c,'WA') );
+
+ELWAcap_xls(c,trun,ELp)=ELWAcap_agg(trun,ELp,c,'EL');
+ELWAcap_xls(c,trun,WApCO)=ELWAcap_agg(trun,WApCO,c,'WA');
+
+
+
+
+
+
 
 RWcaputil(trun,c,ELpd)$(ELWAcap(trun,c,ELpd,'EL')>0)=
  (sum((v,r,ELday,ELs,ELl,ELf)$(Elfuelburn(ELpd,v,ELf,r,c)>0 and ELpcom(ELpd) and rc(r,c)),ELop.l(ELpd,v,ELl,ELs,ELday,ELf,trun,r,c))
