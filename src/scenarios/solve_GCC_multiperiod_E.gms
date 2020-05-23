@@ -535,7 +535,7 @@ WAfconsump_trade.fx(fup,ttrun,rr,cc)$WAf(fup)=0;
 *$offtext
 
 *);
-
+$ontext
 if(ord(trun)=5,
         execute_loadpoint "integratedMCP_p5.gdx";
 elseif ord(trun)=6,
@@ -560,9 +560,10 @@ elseif ord(trun)=15,
         execute_loadpoint "integratedMCP_p15.gdx";
 elseif ord(trun)=16,
         execute_loadpoint "integratedMCP_p16.gdx";
+
 );
-$ontext
 $offtext
+
 
 solve integratedMCP using MCP;
 

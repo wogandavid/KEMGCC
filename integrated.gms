@@ -33,7 +33,7 @@ display call;
 display rc;
 
 * name the scenario
-$setglobal scenario F
+$setglobal scenario B
 
 scalars
 savedrun load saved run: 1 /0/
@@ -95,6 +95,16 @@ if(lts=1,
 
 $INCLUDE src/create_models.gms
 
+option
+LP=cbc
+MCP=path
+limrow=0
+limcol=0
+solveopt = merge
+profile=0
+;
+
+
 *$INCLUDE foresight.gms
 *$INCLUDE src/scenarios/solve_singleperiod.gms
 
@@ -103,11 +113,11 @@ parameter methane_add(time);
 * == multi-period scenarios
 $INCLUDE src/projections.gms
 *$INCLUDE src/scenarios/solve_GCC_multiperiod_A.gms
-*$INCLUDE src/scenarios/solve_GCC_multiperiod_B.gms
+$INCLUDE src/scenarios/solve_GCC_multiperiod_B.gms
 *$INCLUDE src/scenarios/solve_GCC_multiperiod_C.gms
 *$INCLUDE src/scenarios/solve_GCC_multiperiod_D.gms
 *$INCLUDE src/scenarios/solve_GCC_multiperiod_E.gms
-$INCLUDE src/scenarios/solve_GCC_multiperiod_F.gms
+*$INCLUDE src/scenarios/solve_GCC_multiperiod_F.gms
 *$INCLUDE src/scenarios/solve_GCC_multiperiod_G.gms
 *$INCLUDE src/scenarios/solve_GCC_multiperiod_H.gms
 
