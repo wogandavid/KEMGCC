@@ -56,47 +56,47 @@ t16    1.11   1.9   2.6   1.0   2.6   2.6
 fuelsupmax(natgas,time,r,c,'ss1')=fuelsupmax(natgas,'t01',r,c,'ss1')*natgas_growth(time,c);
 
 table HFO_growth(time,c)
-       ksa 
-t01    1.0
-t02    1.6  
-t03    2.3   
-t04    2.6   
-t05    3.0   
-t06    3.1   
-t07    3.2   
-t08    3.3   
-t09    3.3   
-t10    3.3   
-t11    3.3   
-t12    3.3   
-t13    3.4   
-t14    3.5   
-t15    3.6   
-t16    3.7   
+       bah kuw omn qat ksa uae
+t01    1.0 1.0 1.0 1.0 1.0 1.0
+t02    1.6 1.6 1.6 1.6 1.6 1.6
+t03    2.3 2.3 2.3 2.3 2.3 2.3
+t04    2.6 2.6 2.6 2.6 2.6 2.6
+t05    3.0 3.0 3.0 3.0 3.0 3.0
+t06    3.1 3.1 3.1 3.1 3.1 3.1
+t07    3.2 3.2 3.2 3.2 3.2 3.2
+t08    3.3 3.3 3.3 3.3 3.3 3.3
+t09    3.3 3.3 3.3 3.3 3.3 3.3
+t10    3.3 3.3 3.3 3.3 3.3 3.3
+t11    3.3 3.3 3.3 3.3 3.3 3.3
+t12    3.3 3.3 3.3 3.3 3.3 3.3
+t13    3.4 3.4 3.4 3.4 3.4 3.4
+t14    3.5 3.5 3.5 3.5 3.5 3.5
+t15    3.6 3.6 3.6 3.6 3.6 3.6
+t16    3.7 3.7 3.7 3.7 3.7 3.7
 ;
 
 table diesel_growth(time,c)
-       kuw 
-t01    1.0
-t02    1.6  
-t03    2.3   
-t04    2.6   
-t05    3.0   
-t06    3.1   
-t07    3.2   
-t08    3.3   
-t09    3.3   
-t10    3.3   
-t11    3.3   
-t12    3.3   
-t13    3.3   
-t14    3.3   
-t15    3.3   
-t16    3.3   
+       bah  kuw  omn  qat  ksa  uae
+t01    1.0  1.0  1.0  1.0  1.0  1.0
+t02    1.6  1.6  1.6  1.6  1.6  1.6
+t03    2.3  2.3  2.3  2.3  2.3  2.3
+t04    2.6  2.6  2.6  2.6  2.6  2.6
+t05    3.0  3.0  3.0  3.0  3.0  3.0
+t06    3.1  3.1  3.1  3.1  3.1  3.1
+t07    3.2  3.2  3.2  3.2  3.2  3.2
+t08    3.3  3.3  3.3  3.3  3.3  3.3
+t09    3.3  3.3  3.3  3.3  3.3  3.3
+t10    3.3  3.3  3.3  3.3  3.3  3.3
+t11    3.3  3.3  3.3  3.3  3.3  3.3
+t12    3.3  3.3  3.3  3.3  3.3  3.3
+t13    3.3  3.3  3.3  3.3  3.3  3.3
+t14    3.3  3.3  3.3  3.3  3.3  3.3
+t15    3.3  3.3  3.3  3.3  3.3  3.3
+t16    3.3  3.3  3.3  3.3  3.3  3.3
 ;
 
 table oilprodgrowth(time,c)
-      bah   kuw    ksa    omn   qat   uae  
+       bah   kuw    ksa    omn   qat   uae  
 t01    1.0   1.00   1.00   1.0   1.0   1.00
 t02    1.0   1.04   1.04   1.0   1.0   1.04
 t03    1.0   1.00   1.00   1.0   1.0   1.00
@@ -124,45 +124,41 @@ Parameter oilpricegrowth(time) growth of Brent crude price in 2015 real USD
 t01       1.00
 t02       0.85
 t03       1.04
-t04       1.50
-t05       1.63
-t06       1.63
-t07       1.63
-t08       1.63
-t09       1.63
-t10       1.63
-t11       1.63
-t12       1.63
-t13       1.63
-t14       1.63
-t15       1.63
-t16       1.63
+t04       1.30
+t05       1.16
+t06       0.97
+t07       0.97
+t08       0.97
+t09       0.97
+t10       0.97
+t11       0.97
+t12       0.97
+t13       0.97
+t14       0.97
+t15       0.97
+t16       0.97
 /
 ;
 fintlprice(crude,time)=fintlprice(crude,'t01')*oilpricegrowth(time);
 
 Parameter coalpricegrowth(time) growth in coal price
 /
-t01        1
-t02        0.9585
-t03        1.0194
-t04        1.0803
-t05        1.1412
-t06        1.2021
-t07        1.263
-t08        1.3239
-t09        1.3848
-t10        1.4457
-t11        1.5066
-t12        1.5675
-t13        1.6284
-t14        1.6893
-t15        1.7502
-t16        1.8111
-t17        1.872
-t18        1.9329
-t19        1.9938
-t20        2.0547
+t01  1.00
+t02  0.85
+t03  0.85
+t04  0.85
+t05  0.85
+t06  0.85
+t07  0.85
+t08  0.85
+t09  0.85
+t10  0.85
+t11  0.85
+t12  0.85
+t13  0.85
+t14  0.85
+t15  0.85
+t16  0.85
 /
 ;
 fintlprice('coal',time)=fintlprice('coal',time)*coalpricegrowth(time);
@@ -181,53 +177,53 @@ display fuelcst,fuelsupmax;
 
 ** new cost declines
 *
-Elcapital('PV','t02',r,c)=1777;
-Elcapital('PV','t03',r,c)=1211;
-Elcapital('PV','t04',r,c)=1064;
-Elcapital('PV','t05',r,c)=1024;
-Elcapital('PV','t06',r,c)=964;
-Elcapital('PV','t07',r,c)=913;
-Elcapital('PV','t08',r,c)=903;
-Elcapital('PV','t09',r,c)=893;
-Elcapital('PV','t10',r,c)=883;
-Elcapital('PV','t11',r,c)=872;
-Elcapital('PV','t12',r,c)=862;
-Elcapital('PV','t13',r,c)=852;
-Elcapital('PV','t14',r,c)=841;
-Elcapital('PV','t15',r,c)=831;
-Elcapital('PV','t16',r,c)=821;
+Elcapital('PV','t03',r,c)=1800;
+Elcapital('PV','t02',r,c)=2000;
+Elcapital('PV','t04',r,c)=1550;
+Elcapital('PV','t05',r,c)=1517;
+Elcapital('PV','t06',r,c)=1485;
+Elcapital('PV','t07',r,c)=1453;
+Elcapital('PV','t08',r,c)=1423;
+Elcapital('PV','t09',r,c)=1393;
+Elcapital('PV','t10',r,c)=1363;
+Elcapital('PV','t11',r,c)=1334;
+Elcapital('PV','t12',r,c)=1306;
+Elcapital('PV','t13',r,c)=1279;
+Elcapital('PV','t14',r,c)=1252;
+Elcapital('PV','t15',r,c)=1225;
+Elcapital('PV','t16',r,c)=1199;
 
-Elcapital('CSP','t02',r,c)=7872;
-Elcapital('CSP','t03',r,c)=7564;
-Elcapital('CSP','t04',r,c)=7257;
-Elcapital('CSP','t05',r,c)=6950;
-Elcapital('CSP','t06',r,c)=6642;
-Elcapital('CSP','t07',r,c)=6559;
-Elcapital('CSP','t08',r,c)=6475;
-Elcapital('CSP','t09',r,c)=6391;
-Elcapital('CSP','t10',r,c)=6308;
-Elcapital('CSP','t11',r,c)=6224;
-Elcapital('CSP','t12',r,c)=6140;
-Elcapital('CSP','t13',r,c)=6057;
-Elcapital('CSP','t14',r,c)=5973;
-Elcapital('CSP','t15',r,c)=5889;
-Elcapital('CSP','t16',r,c)=5806;
+Elcapital('CSP','t02',r,c)=7706;
+Elcapital('CSP','t03',r,c)=7543;
+Elcapital('CSP','t04',r,c)=7384;
+Elcapital('CSP','t05',r,c)=7228;
+Elcapital('CSP','t06',r,c)=7075;
+Elcapital('CSP','t07',r,c)=6926;
+Elcapital('CSP','t08',r,c)=6780;
+Elcapital('CSP','t09',r,c)=6637;
+Elcapital('CSP','t10',r,c)=6496;
+Elcapital('CSP','t11',r,c)=6359;
+Elcapital('CSP','t12',r,c)=6225;
+Elcapital('CSP','t13',r,c)=6094;
+Elcapital('CSP','t14',r,c)=5965;
+Elcapital('CSP','t15',r,c)=5839;
+Elcapital('CSP','t16',r,c)=5716;
 
 Elcapital('Wind','t02',r,c)=1528;
 Elcapital('Wind','t03',r,c)=1508;
 Elcapital('Wind','t04',r,c)=1488;
-Elcapital('Wind','t05',r,c)=1469;
-Elcapital('Wind','t06',r,c)=1450;
-Elcapital('Wind','t07',r,c)=1432;
-Elcapital('Wind','t08',r,c)=1415;
-Elcapital('Wind','t09',r,c)=1399;
-Elcapital('Wind','t10',r,c)=1383;
-Elcapital('Wind','t11',r,c)=1368;
-Elcapital('Wind','t12',r,c)=1353;
-Elcapital('Wind','t13',r,c)=1340;
-Elcapital('Wind','t14',r,c)=1327;
-Elcapital('Wind','t15',r,c)=1315;
-Elcapital('Wind','t16',r,c)=1303;
+Elcapital('Wind','t05',r,c)=1481;
+Elcapital('Wind','t06',r,c)=1475;
+Elcapital('Wind','t07',r,c)=1469;
+Elcapital('Wind','t08',r,c)=1462;
+Elcapital('Wind','t09',r,c)=1456;
+Elcapital('Wind','t10',r,c)=1449;
+Elcapital('Wind','t11',r,c)=1443;
+Elcapital('Wind','t12',r,c)=1437;
+Elcapital('Wind','t13',r,c)=1430;
+Elcapital('Wind','t14',r,c)=1424;
+Elcapital('Wind','t15',r,c)=1418;
+Elcapital('Wind','t16',r,c)=1412;
 
 Elcapital('Nuclear','t02',r,c)=6157;
 Elcapital('Nuclear','t03',r,c)=6154;
