@@ -174,7 +174,8 @@ ELcapital('CC',time,r,c)=        911;
 *ELcapital('GTtoCC',time,r,c)=    240;
 ELcapital('GTtoCC',time,r,c)=    ELcapital('CC',time,r,c)*0.2;
 ELcapital('PV',time,r,c)=        2360;
-ELcapital('CSP',time,r,c)=       5250;
+ELcapital('CSP',time,r,c)=       7900;
+*ELcapital('CSP',time,r,c)=       5250;
 *ELcapital('Nuclear',time,r,c)=   5288;
 ELcapital('Nuclear',time,r,c)=   6500;
 ELcapital('Wind',time,r,c)=      2020;
@@ -580,7 +581,7 @@ $offtext
 
 Table ELdemgro(time,r,c) Electricity demand growth rate relative to initial condition
          west.ksa    sout.ksa   cent.ksa    east.ksa
-t01       1           1          1           1
+t01       1.00        1.00       1.00        1.00
 t02       1.06        1.16       1.06        1.06
 t03       1.11        1.24       1.11        1.11
 t04       1.15        1.33       1.16        1.17
@@ -604,7 +605,7 @@ t21       2.16        2.93       2.17        3.19
 t22       2.21        2.98       2.23        3.30
 
 +        adwe.uae        dewa.uae        sewa.uae        fewa.uae
-t01       1               1               1               1
+t01       1.00            1.00            1.00            1.00
 t02       1.03            1.05            1.06            1.08
 t03       1.07            1.11            1.13            1.17
 t04       1.11            1.16            1.20            1.27
@@ -628,7 +629,7 @@ t21       1.75            1.75            1.75            1.75
 t22       1.75            1.75            1.75            1.75
 
 +        qatr.qat        kuwr.kuw        bahr.bah        omnr.omn
-t01       1               1               1.00            1.00
+t01       1.00            1.00            1.00            1.00
 t02       1.05            1.05            1.06            1.06
 t03       1.09            1.09            1.10            1.10
 t04       1.15            1.15            1.14            1.14
