@@ -112,8 +112,8 @@ parameter methane_add(time);
 
 * == multi-period scenarios
 $INCLUDE src/projections.gms
-*$INCLUDE src/scenarios/solve_GCC_multiperiod_A.gms
-$INCLUDE src/scenarios/solve_GCC_multiperiod_B.gms
+$INCLUDE src/scenarios/solve_GCC_multiperiod_A.gms
+*$INCLUDE src/scenarios/solve_GCC_multiperiod_B.gms
 *$INCLUDE src/scenarios/solve_GCC_multiperiod_C.gms
 *$INCLUDE src/scenarios/solve_GCC_multiperiod_D.gms
 *$INCLUDE src/scenarios/solve_GCC_multiperiod_E.gms
