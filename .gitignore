@@ -12,6 +12,8 @@
 *.pf
 
 /gcc_env/
+/mac-env/
+/ubuntu-env/
 
 tableau/*.twb
 
