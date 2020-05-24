@@ -33,7 +33,7 @@ display call;
 display rc;
 
 * name the scenario
-$setglobal scenario B
+$setglobal scenario A
 
 scalars
 savedrun load saved run: 1 /0/
