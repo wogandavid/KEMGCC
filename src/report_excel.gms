@@ -66,7 +66,7 @@ ELtrademax.l
 ;
 
 * write to excel
-execute_unload 'results/MainScenarios/2020_05_12/results_%scenario%.gdx'
+execute_unload 'results/MainScenarios/2020_05_24/results_%scenario%.gdx'
 ELWAbld_xls
 ELWAcap_xls
 ELWAsupELp
