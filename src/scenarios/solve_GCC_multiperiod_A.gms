@@ -120,7 +120,7 @@ display t_ind;
 
 * ======== t01 =========
 if(ord(trun)=1,
-execute_loadpoint "integratedMCP_p1.gdx";
+execute_loadpoint "data/integratedMCP_p1.gdx";
 
 fMP(f,c)= no;
 
@@ -164,10 +164,9 @@ solve integratedMCP using MCP;
 
 );
 
-
 * ======== t02 =========
 if(ord(trun)=2,
-execute_loadpoint "integratedMCP_p2.gdx";
+execute_loadpoint "data/integratedMCP_p2.gdx";
 
 fMP(f,c)= no;
 *fMP('methane')= yes;
@@ -281,7 +280,7 @@ solve integratedMCP using MCP;
 * 2017
 
 if((ord(trun)=3),
-execute_loadpoint "integratedMCP_p3.gdx";
+execute_loadpoint "data/integratedMCP_p3.gdx";
 
 fMP(f,c)= no;
 
@@ -390,7 +389,7 @@ solve integratedMCP using MCP;
 * ===== t04 ======
 
 if((ord(trun)=4),
-execute_loadpoint "integratedMCP_p4.gdx";
+execute_loadpoint "data/integratedMCP_p4.gdx";
 
 *WAbld.up('SWRO','new','t04',r,c)=1;
 
@@ -504,7 +503,7 @@ solve integratedMCP using MCP;
 * ===== t05 ======
 
 if((ord(trun)=5),
-execute_loadpoint "integratedMCP_p5.gdx";
+execute_loadpoint "data/integratedMCP_p5.gdx";
 
 *WAbld.up('SWRO','new','t05',r,c)=1;
 

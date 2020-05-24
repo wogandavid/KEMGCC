@@ -118,7 +118,7 @@ display t_ind;
 
 * ======== t01 =========
 if(ord(trun)=1,
-execute_loadpoint "integratedMCP_p1.gdx";
+execute_loadpoint "data/integratedMCP_p1.gdx";
 
 fMP(f,c)= no;
 
@@ -165,7 +165,7 @@ solve integratedMCP using MCP;
 
 * ======== t02 =========
 if(ord(trun)=2,
-execute_loadpoint "integratedMCP_p2.gdx";
+execute_loadpoint "data/integratedMCP_p2.gdx";
 
 fMP(f,c)= no;
 
@@ -278,7 +278,7 @@ solve integratedMCP using MCP;
 * 2017
 
 if((ord(trun)=3),
-execute_loadpoint "integratedMCP_p3.gdx";
+execute_loadpoint "data/integratedMCP_p3.gdx";
 
 fMP(f,c)= no;
 
@@ -387,7 +387,7 @@ solve integratedMCP using MCP;
 * ===== t04 ======
 
 if((ord(trun)=4),
-execute_loadpoint "integratedMCP_p4.gdx";
+execute_loadpoint "data/integratedMCP_p4.gdx";
 
 *WAbld.up('SWRO','new','t04',r,c)=1;
 
@@ -494,9 +494,124 @@ solve integratedMCP using MCP;
 
 );
 
-* ===== t>4 ======
 
-if((ord(trun)>4),
+* ===== t05 ======
+
+if((ord(trun)=5),
+execute_loadpoint "data/integratedMCP_p5.gdx";
+
+*WAbld.up('SWRO','new','t05',r,c)=1;
+
+fMP(f,c)= no;
+*fMP('methane')= yes;
+*fMP('diesel','kuw')= yes;
+
+ELfMP(ELf,c)$fmp(ELf,c)= yes;
+ELfAP(ELf,c)= not fmp(ELf,c);
+
+WAfMP(WAf,c)$fmp(WAf,c)= yes;
+WAfAP(WAf,c)= not fmp(WAf,c);
+
+* GCC sets
+fMPt(f,c)=  no;
+*fMPt('methane',c)= yes;
+*fMPt(f,c)= yes;
+
+ELfMPt(ELf,c)$fMPt(ELf,c)= yes;
+WAfMPt(WAf,c)$fMPt(WAf,c)= yes;
+
+tradecap=1;
+EMprice(ksec,EMcp,'t05',c)=0;
+
+*$ontext
+ELWAcoord('ksa')=0;
+ELWAcoord('kuw')=1;
+ELWAcoord('qat')=1;
+ELWAcoord('bah')=1;
+ELWAcoord('omn')=1;
+ELWAcoord('uae')=1;
+*$offtext
+
+* set administered prices - Bahrain
+fAP('methane','t05','bah')=2.75;
+fAP('arablight','t05','bah')=fintlprice('arablight','t01');
+fAP('u-235','t05','bah')=fintlprice('u-235','t01');
+fAP('ethane','t05','bah')=2.00;
+fAP('arabheavy','t05','bah')=fintlprice('arablight','t01');
+fAP('diesel','t05','bah')=268.48;
+fAP('HFO','t05','bah')= 1e2;
+fAP('Coal','t05','bah')=9e9;
+
+* Kuwait
+*fAP('methane','t05','kuw')=fintlprice('methane','t04');
+fAP('methane','t05','kuw')=4.20;
+fAP('arablight','t05','kuw')=51.20;
+fAP('u-235','t05','kuw')=fintlprice('u-235','t01');
+fAP('ethane','t05','kuw')=2.00;
+fAP('arabheavy','t05','kuw')=fintlprice('arabheavy','t01');
+fAP('diesel','t05','kuw')=504.20;
+fAP('HFO','t05','kuw')= 370.50;
+fAP('Coal','t05','kuw')=9e9;
+
+* set administered prices - Oman
+fAP('methane','t05','omn')=2.00;
+fAP('arablight','t05','omn')=fintlprice('arablight','t01');
+fAP('u-235','t05','omn')=fintlprice('u-235','t01');
+fAP('ethane','t05','omn')=2.00;
+fAP('arabheavy','t05','omn')=fintlprice('arablight','t01');
+fAP('diesel','t05','omn')=1e2;
+fAP('HFO','t05','omn')= 1e2;
+fAP('Coal','t05','omn')=9e9;
+
+* set administered prices - Qatar
+fAP('methane','t05','qat')=1.50;
+fAP('arablight','t05','qat')=fintlprice('arablight','t01');
+fAP('u-235','t05','qat')=fintlprice('u-235','t01');
+fAP('ethane','t05','qat')=2.00;
+fAP('arabheavy','t05','qat')=fintlprice('arablight','t01');
+fAP('diesel','t05','qat')=1e2;
+fAP('HFO','t05','qat')= 1e2;
+fAP('Coal','t05','qat')=9e9;
+
+* set adminstered prices - KSA
+fAP('methane','t05','ksa')=1.25;
+*fAP('arablight','t05','ksa')=6.35;
+fAP('arablight','t05','ksa')=7.25;
+fAP('u-235','t05','ksa')=101.5;
+fAP('ethane','t05','ksa')=0.75;
+fAP('arabheavy','t05','ksa')=6;
+
+fAP('diesel','t05','ksa')=fAP('diesel','t01','ksa');
+fAP('HFO','t05','ksa')= fAP('HFO','t01','ksa');
+fAP('Coal','t05','ksa')=9e9;
+
+* set administered prices - UAE
+fAP('methane','t05','uae')=2.00;
+fAP('arablight','t05','uae')=fintlprice('arablight','t01');
+fAP('u-235','t05','uae')=fintlprice('u-235','t01');
+fAP('ethane','t05','uae')=2.00;
+fAP('arabheavy','t05','uae')=fintlprice('arablight','t01');
+fAP('diesel','t05','uae')=1e2;
+fAP('HFO','t05','uae')= 1e2;
+fAP('Coal','t05','uae')=9e9;
+
+ELAPf(ELf,ttrun,r,c) = fAP(ELf,ttrun,c);
+WAAPf(WAf,ttrun,r,c) = fAP(WAf,ttrun,c);
+
+display ELfMP,WAfMP,ELAPf,WAAPf;
+
+ELop_trade.fx(ELpd,v,ELl,ELs,ELday,ELf,ttrun,r,c)=0;
+ELfconsump_trade.fx(ELpd,ELf,ttrun,r,c)=0;
+WAFop_trade.fx(WApF,v,WAf,ttrun,r,c)=0;
+WAfconsump_trade.fx(fup,ttrun,rr,cc)$WAf(fup)=0;
+
+solve integratedMCP using MCP;
+
+);
+
+* ===== t>5 ======
+
+if((ord(trun)>5),
 
 fMP(f,c)= yes;
 
