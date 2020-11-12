@@ -33,7 +33,7 @@ display call;
 display rc;
 
 * name the scenario
-$setglobal scenario A
+$setglobal scenario Hint
 
 scalars
 savedrun load saved run: 1 /0/
@@ -49,7 +49,7 @@ writetoexcel set to 1 to produce Excel workbook of results /0/
 lts long-term static set to 1 to enable /0/
 ;
 
-option savepoint=2;
+option savepoint=0;
 *==================
 parameter ELWAcoord(c) water sector see deregulated price;
 parameter t_ind(trun) index of absolute time;
@@ -69,6 +69,7 @@ $INCLUDE src/fuel.gms
 $INCLUDE src/power.gms
 $INCLUDE src/water.gms
 $INCLUDE src/transmission.gms
+*$INCLUDE src/scenarios/sensitivities/Interconnector/transmission2x.gms
 $INCLUDE src/trade.gms
 $INCLUDE src/emissions.gms
 
@@ -95,15 +96,6 @@ if(lts=1,
 
 $INCLUDE src/create_models.gms
 
-option
-LP=cbc
-MCP=path
-limrow=0
-limcol=0
-solveopt = merge
-profile=0
-;
-
 
 *$INCLUDE foresight.gms
 *$INCLUDE src/scenarios/solve_singleperiod.gms
@@ -112,6 +104,8 @@ parameter methane_add(time);
 
 * == multi-period scenarios
 $INCLUDE src/projections.gms
+*$INCLUDE src/scenarios/sensitivities/Oilgasprice/projections-oilgas.gms
+*$INCLUDE src/scenarios/sensitivities/Techcost/projections-cost.gms
 $INCLUDE src/scenarios/solve_GCC_multiperiod_A.gms
 *$INCLUDE src/scenarios/solve_GCC_multiperiod_B.gms
 *$INCLUDE src/scenarios/solve_GCC_multiperiod_C.gms
@@ -120,6 +114,18 @@ $INCLUDE src/scenarios/solve_GCC_multiperiod_A.gms
 *$INCLUDE src/scenarios/solve_GCC_multiperiod_F.gms
 *$INCLUDE src/scenarios/solve_GCC_multiperiod_G.gms
 *$INCLUDE src/scenarios/solve_GCC_multiperiod_H.gms
+
+
+* sensitivity runs
+*$INCLUDE src/scenarios/sensitivities/CO2/solve_GCC_multiperiod_B30.gms
+*$INCLUDE src/scenarios/sensitivities/CO2/solve_GCC_multiperiod_B90.gms
+*$INCLUDE src/scenarios/sensitivities/CO2/solve_GCC_multiperiod_D30.gms
+*$INCLUDE src/scenarios/sensitivities/CO2/solve_GCC_multiperiod_D90.gms
+*$INCLUDE src/scenarios/sensitivities/CO2/solve_GCC_multiperiod_F30.gms
+*$INCLUDE src/scenarios/sensitivities/CO2/solve_GCC_multiperiod_F90.gms
+*$INCLUDE src/scenarios/sensitivities/CO2/solve_GCC_multiperiod_H30.gms
+*$INCLUDE src/scenarios/sensitivities/CO2/solve_GCC_multiperiod_H90.gms
+
 
 $INCLUDE src/report_excel.gms
 * write to CSV:

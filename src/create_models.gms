@@ -416,7 +416,7 @@ integratedMCP.solvelink=5;
 * turn on scaling
 IntegratedMCP.scaleopt=1;
 
-$ontext
+*$ontext
 option
 LP=cbc
 MCP=path
@@ -425,7 +425,7 @@ limcol=0
 solveopt = merge
 profile=0
 ;
-$offtext
+*$offtext
 
 *$offtext
 *Scaling to improve solver performance:
