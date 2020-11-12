@@ -5,6 +5,7 @@
 *.lxi
 *.log
 /results/*
+!results/.gitkeep
 /climate/
 *.code-workspace
 225*
