@@ -114,6 +114,9 @@ RWnetex(trun,c)=
 +RWfexportrev(trun,c)
 ;
 
+
+RWnet_carbonrecycle(trun,c) = RWnetex(trun,c)/1e3 + sum(EMcp,EMcost.l('EL',EMcp,trun,c)*(1/fdiscfact(trun))+EMcost.l('WA',EMcp,trun,c)*(1/fdiscfact(trun)))/1e3;
+
 * table
 RWcostcalcs(trun,'Capex',c)=RWcapex(trun,c)/1e3;
 RWcostcalcs(trun,'Opex',c)=RWopex(trun,c)/1e3;
@@ -124,6 +127,12 @@ RWcostcalcs(trun,'ELexportrev',c)=RWELexportrev(trun,c)/1e3;
 RWcostcalcs(trun,'fExportrev',c)=RWfexportrev(trun,c)/1e3;
 RWcostcalcs(trun,'Total System',c)=RWnetex(trun,c)/1e3;
 
-execute_unload 'results/MainScenarios/2020_05_12/results_cost_calcs_%scenario%.gdx'
-RWcostcalcs
+*execute_unload 'results/Sensitivities/results_cost_calcs_%scenario%.gdx'
+*execute_unload 'results/MainScenarios/results_cost_calcs_%scenario%.gdx'
+*RWcostcalcs
+;
+execute_unload 'results/Sensitivities/results_cost_calcs_carbon_%scenario%.gdx'
+*execute_unload 'results/MainScenarios/results_cost_calcs_carbon_%scenario%.gdx'
+RWnetex
+RWnet_carbonrecycle
 ;

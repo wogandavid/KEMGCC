@@ -4,18 +4,82 @@ import gdxpds
 import pandas as pd
 import glob
 
-#files = glob.glob('../results/for-post/results_0*.gdx')
-files = [
-    '../results/MainScenarios/2020_05_09/results_A.gdx',
-    '../results/MainScenarios/2020_05_09/results_B.gdx',
-    '../results/MainScenarios/2020_05_09/results_C.gdx',
-    '../results/MainScenarios/2020_05_09/results_D.gdx',
-    '../results/MainScenarios/2020_05_09/results_E.gdx',
-    '../results/MainScenarios/2020_05_09/results_F.gdx',
-    '../results/MainScenarios/2020_05_09/results_G.gdx',
-    '../results/MainScenarios/2020_05_09/results_H.gdx']
+##files = glob.glob('../results/for-post/results_0*.gdx')
+#files = [
+#    #'../results/Sensitivities/Int2x/results_Cint.gdx',
+#    #'../results/Sensitivities/Int2x/results_Dint.gdx',
+#    #'../results/Sensitivities/Int2x/results_Gint.gdx',
+#    #'../results/Sensitivities/Int2x/results_Hint.gdx'
+#    '../results/Sensitivities/Oil and gas prices/results_Aoil.gdx',
+#    '../results/Sensitivities/Oil and gas prices/results_Boil.gdx',
+#    '../results/Sensitivities/Oil and gas prices/results_Coil.gdx',
+#    '../results/Sensitivities/Oil and gas prices/results_Doil.gdx',
+#    '../results/Sensitivities/Oil and gas prices/results_Eoil.gdx',
+#    '../results/Sensitivities/Oil and gas prices/results_Foil.gdx',
+#    '../results/Sensitivities/Oil and gas prices/results_Goil.gdx',
+#    '../results/Sensitivities/Oil and gas prices/results_Hoil.gdx'
+#]
 
-scenarios = ['A','B','C','D','E','F','G','H']
+print('-- Reading in files...')
+
+files = [
+    '../results/MainScenarios/results_A.gdx',
+    '../results/MainScenarios/results_B.gdx',
+    '../results/MainScenarios/results_C.gdx',
+    '../results/MainScenarios/results_D.gdx',
+    '../results/MainScenarios/results_E.gdx',
+    '../results/MainScenarios/results_F.gdx',
+    '../results/MainScenarios/results_G.gdx',
+    '../results/MainScenarios/results_H.gdx',
+#
+    '../results/Sensitivities/results_B30.gdx',
+    '../results/Sensitivities/results_D30.gdx',
+    '../results/Sensitivities/results_F30.gdx',
+    '../results/Sensitivities/results_H30.gdx',
+    '../results/Sensitivities/results_B90.gdx',
+    '../results/Sensitivities/results_D90.gdx',
+    '../results/Sensitivities/results_F90.gdx',
+    '../results/Sensitivities/results_H90.gdx',
+#
+    '../results/Sensitivities//results_Cint.gdx',
+    '../results/Sensitivities//results_Dint.gdx',
+    '../results/Sensitivities//results_Gint.gdx',
+    '../results/Sensitivities//results_Hint.gdx',
+#
+    '../results/Sensitivities/results_Aoil.gdx',
+    '../results/Sensitivities/results_Boil.gdx',
+    '../results/Sensitivities/results_Coil.gdx',
+    '../results/Sensitivities/results_Doil.gdx',
+    '../results/Sensitivities/results_Eoil.gdx',
+    '../results/Sensitivities/results_Foil.gdx',
+    '../results/Sensitivities/results_Goil.gdx',
+    '../results/Sensitivities/results_Hoil.gdx',
+#
+    '../results/Sensitivities/results_Are.gdx',
+    '../results/Sensitivities/results_Bre.gdx',
+    '../results/Sensitivities/results_Cre.gdx',
+    '../results/Sensitivities/results_Dre.gdx',
+    '../results/Sensitivities/results_Ere.gdx',
+    '../results/Sensitivities/results_Fre.gdx',
+    '../results/Sensitivities/results_Gre.gdx',
+    '../results/Sensitivities/results_Hre.gdx',
+]
+
+
+#scenarios = ['A','B','C','D','E','F','G','H']
+#scenarios = ['B30','B90','D30','D90','F30','F90','H30','H90']
+#scenarios = ['Cint','Dint','Gint','Hint']
+#scenarios = ['Are','Bre','Cre','Dre','Ere','Fre','Gre','Hre']
+#scenarios = ['Aoil','Boil','Coil','Doil','Eoil','Foil','Goil','Hoil']
+
+scenarios = [
+    'A','B','C','D','E','F','G','H',
+    'B30','B90','D30','D90','F30','F90','H30','H90',
+    'Cint','Dint','Gint','Hint',
+    'Are','Bre','Cre','Dre','Ere','Fre','Gre','Hre',
+    'Aoil','Boil','Coil','Doil','Eoil','Foil','Goil','Hoil'
+]
+
 countries = ['bah','kuw','omn','qat','ksa','uae']
 
 _fuel_cons_list = []
@@ -50,6 +114,8 @@ years = {'t01':'2015',
 fuels = {'methane':'NG',
          'arablight':'oil'}
 
+print('-- Creating dataframes...')
+
 for filename, scenario in zip(files, scenarios):
     
     _dataframes = gdxpds.to_dataframes(filename)
@@ -62,6 +128,7 @@ for filename, scenario in zip(files, scenarios):
     #_fuel_cons = _fuel_cons.pivot_table(values='Value',index=['scenario','c'],columns='f')
     _fuel_cons = _fuel_cons.replace(years)
     _fuel_cons = _fuel_cons.replace(fuels)
+    _fuel_cons['value'] = _fuel_cons['value']/1000
     _fuel_cons_list.append(_fuel_cons)
     
     # Technology builds
@@ -72,24 +139,24 @@ for filename, scenario in zip(files, scenarios):
     _ELWAbld_xls = _ELWAbld_xls.replace(fuels)
     _ELWAbld_xls_list.append(_ELWAbld_xls)
     
-#    # Installed Capacity
-#    _ELWAcap = _dataframes['ELWAcap']
-#    _ELWAcap.columns = ['trun','c','ELp','sector','value']
-#    _ELWAcap = _ELWAcap.drop(columns='sector')
-#    _ELWAcap['scenario'] = scenario
-#    _ELWAcap = _ELWAcap.replace(years)
-#    _ELWAcap = _ELWAcap.replace(fuels)
-#    #_ELWAcap = _ELWAcap.pivot_table(values='value',index=['scenario','c','trun'],columns='ELp')
-#    _ELWAcap_list.append(_ELWAcap)
-
-    # Installed Capacity that works
-    _ELWAcap = _dataframes['ELWAcap_xls']
-    _ELWAcap.columns = ['c','trun','ELp','value']
+    # Installed Capacity
+    _ELWAcap = _dataframes['ELWAcap']
+    _ELWAcap.columns = ['trun','c','ELp','sector','value']
+    _ELWAcap = _ELWAcap.drop(columns='sector')
     _ELWAcap['scenario'] = scenario
     _ELWAcap = _ELWAcap.replace(years)
     _ELWAcap = _ELWAcap.replace(fuels)
     #_ELWAcap = _ELWAcap.pivot_table(values='value',index=['scenario','c','trun'],columns='ELp')
     _ELWAcap_list.append(_ELWAcap)
+
+    ## Installed Capacity that works
+    #_ELWAcap = _dataframes['ELWAcap_xls']
+    #_ELWAcap.columns = ['c','trun','ELp','value']
+    #_ELWAcap['scenario'] = scenario
+    #_ELWAcap = _ELWAcap.replace(years)
+    #_ELWAcap = _ELWAcap.replace(fuels)
+    ##_ELWAcap = _ELWAcap.pivot_table(values='value',index=['scenario','c','trun'],columns='ELp')
+    #_ELWAcap_list.append(_ELWAcap)
 
     # Electricity Generation
     _ELWAsupELp_xls = _dataframes['ELWAsupELp_xls']
@@ -132,6 +199,7 @@ for filename, scenario in zip(files, scenarios):
     _Invest.columns = ['trun','tech','sector','value']
     _Invest['scenario'] = scenario
     _Invest = _Invest.replace(years)
+    _Invest['value'] = _Invest['value']/1000
     _Invest_list.append(_Invest)
     
     _ELtrans = _dataframes['RWELtrans_tot']
@@ -188,25 +256,29 @@ to_write['sup'] = _ELWAsupELp_xls_df
 to_write['em'] = _RWEMallquant_df
 to_write['invest'] = _Invest_df
 
-with pd.ExcelWriter('../results/MainScenarios/2020_05_09/results.xlsx') as writer:
+
+
+with pd.ExcelWriter('../results/results_all2.xlsx') as writer:
     for k, v in to_write.items():
+        print('-- Writing {} ...'.format(k))
         v.to_excel(writer, sheet_name=k, merge_cells=False,float_format='%.2f',index=False)
 
+print('--Finished writing result file...\n')
 
-fuel_cons_df.to_csv('../tableau/fuel_cons.csv', index=False)
-
-_ELWAcap_df.to_csv('../tableau/capacity.csv', index=False)
-
-ELWAbld_xls_df.to_csv('../tableau/builds.csv', index=False)
-
-_ELWAsupELp_xls_df.to_csv('../tableau/Elsup.csv', index=False)
-
-_RWEMallquant_df.to_csv('../tableau/emissions.csv', index=False)
-
-_Invest_df.to_csv('../tableau/investments.csv', index=False)
-
-_RWELtrade_tot_df.to_csv('../tableau/trade.csv', index=False)
-
-_ELtrans_df.to_csv('../tableau/ELtrans.csv', index=False)
+#fuel_cons_df.to_csv('../tableau/fuel_cons.csv', index=False)
+#
+#_ELWAcap_df.to_csv('../tableau/capacity.csv', index=False)
+#
+#ELWAbld_xls_df.to_csv('../tableau/builds.csv', index=False)
+#
+#_ELWAsupELp_xls_df.to_csv('../tableau/Elsup.csv', index=False)
+#
+#_RWEMallquant_df.to_csv('../tableau/emissions.csv', index=False)
+#
+#_Invest_df.to_csv('../tableau/investments.csv', index=False)
+#
+#_RWELtrade_tot_df.to_csv('../tableau/trade.csv', index=False)
+#
+#_ELtrans_df.to_csv('../tableau/ELtrans.csv', index=False)
 
 

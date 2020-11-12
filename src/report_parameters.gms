@@ -79,4 +79,5 @@ RWfexportrev(trun,c)
 RWnetex(trun,c)
 RWcostcalcs
 RWmargencost(trun,c)
+RWnet_carbonrecycle
 ;
