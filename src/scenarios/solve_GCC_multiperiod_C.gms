@@ -2,7 +2,8 @@
 
 option limcol=10;
 option limrow=10;
-option savepoint=2;
+*option savepoint=2;
+option savepoint=0;
 
 capsub(ELp,trun)=0;
 
@@ -494,7 +495,6 @@ solve integratedMCP using MCP;
 
 );
 
-
 * ===== t05 ======
 
 if((ord(trun)=5),
@@ -653,34 +653,31 @@ display ELfMP,WAfMP,ELAPf,WAAPf,trun,ttrun,t;
 *$offtext
 
 *);
-
-if(ord(trun)=5,
-        execute_loadpoint "integratedMCP_p5.gdx";
-elseif ord(trun)=6,
-        execute_loadpoint "integratedMCP_p6.gdx";
+*$ontext
+if(ord(trun)=6,
+        execute_loadpoint "results/MainScenarios/2020_05_24/C/integratedMCP_p6.gdx";
 elseif ord(trun)=7,
-        execute_loadpoint "integratedMCP_p7.gdx";
+        execute_loadpoint "results/MainScenarios/2020_05_24/C/integratedMCP_p7.gdx";
 elseif ord(trun)=8,
-        execute_loadpoint "integratedMCP_p8.gdx";
+        execute_loadpoint "results/MainScenarios/2020_05_24/C/integratedMCP_p8.gdx";
 elseif ord(trun)=9,
-        execute_loadpoint "integratedMCP_p9.gdx";
+        execute_loadpoint "results/MainScenarios/2020_05_24/C/integratedMCP_p9.gdx";
 elseif ord(trun)=10,
-        execute_loadpoint "integratedMCP_p10.gdx";
+        execute_loadpoint "results/MainScenarios/2020_05_24/C/integratedMCP_p10.gdx";
 elseif ord(trun)=11,
-        execute_loadpoint "integratedMCP_p11.gdx";
+        execute_loadpoint "results/MainScenarios/2020_05_24/C/integratedMCP_p11.gdx";
 elseif ord(trun)=12,
-        execute_loadpoint "integratedMCP_p12.gdx";
+        execute_loadpoint "results/MainScenarios/2020_05_24/C/integratedMCP_p12.gdx";
 elseif ord(trun)=13,
-        execute_loadpoint "integratedMCP_p13.gdx";
+        execute_loadpoint "results/MainScenarios/2020_05_24/C/integratedMCP_p13.gdx";
 elseif ord(trun)=14,
-        execute_loadpoint "integratedMCP_p14.gdx";
+        execute_loadpoint "results/MainScenarios/2020_05_24/C/integratedMCP_p14.gdx";
 elseif ord(trun)=15,
-        execute_loadpoint "integratedMCP_p15.gdx";
+        execute_loadpoint "results/MainScenarios/2020_05_24/C/integratedMCP_p15.gdx";
 elseif ord(trun)=16,
-        execute_loadpoint "integratedMCP_p16.gdx";
+        execute_loadpoint "results/MainScenarios/2020_05_24/C/integratedMCP_p16.gdx";
 );
-$ontext
-$offtext
+*$offtext
 
 solve integratedMCP using MCP;
 
