@@ -6,6 +6,7 @@
 *.log
 /results/*
 !results/.gitkeep
+!data/.gitkeep
 /climate/
 *.code-workspace
 225*
@@ -13,8 +14,6 @@
 *.pf
 
 /gcc_env/
-/mac-env/
-/ubuntu-env/
 
 tableau/*.twb
 
