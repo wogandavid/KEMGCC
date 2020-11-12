@@ -2,23 +2,9 @@ name: null
 
 channels:
   - conda-forge
-  - defaults
-  - pyviz
 
 dependencies:
-  - jupyterlab
   - matplotlib
   - pandas
-  - pyarrow
   - python=3.6
   - xlrd
-  - plotly
-  - ipywidgets
-  - nodejs
-  - psutil
-  - requests
-  - bokeh
-  - pyviz::panel
-  - nodejs
-  - hvplot
-  - jupyter-panel-proxy
